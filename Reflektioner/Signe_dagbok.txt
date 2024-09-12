@@ -1,0 +1,24 @@
+v.1 
+Det första vi gjort är att se till att alla har githubkonto - bara det en utmaning visade det sig. 
+
+Nu när github är på plats för alla har vi förberett mappar för reflektioner, containers och planering enligt uppgiftsbeskrivningen. 
+Vi har även gjort mappa för databas och server som vi kommer behöva senare.
+
+Vi har testat att committa och allt funkar.
+git kommandon som används är:
+
+git commit  - för att commita det vi gjort. Viktigt här att beskriva sitt commit enligt instruktionerna, något vi implementerar från start.
+git commit -m
+git add - för att lägga till
+git switch -
+git fetch -
+git pull -
+
+För att hålla en main branch utan fel har vi skapat en maintenance branch. Där är tanken att alla våra ändringar ska ske först innan vi mergear den med main. 
+Vi planerar också att inte arbeta i samma fil samtidigt för att undvika konflikter.
+
+De svårigheter jag har stött på är att hålla koll på gitkommandon och bli bekväm i miljön. Det är första gången jag använder github, men jag tror att jag har fattat hur det funkar i stort nu.
+
+Såhär i början är det mycket som jag inte riktigt vet hur vi ska lösa längre fram. Det här med containers och databaser har jag inte riktigt satt mig in i än, och det kan bli en utmaning eftersom det verkar som att vi kommer behöva använda flera olika språk. 
+
+Det kan bli ett problem med servern.
