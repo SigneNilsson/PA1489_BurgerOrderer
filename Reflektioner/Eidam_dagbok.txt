@@ -1,0 +1,40 @@
+12/9-2024: 
+
+The group has installed, set up GitHub and GitHub Desktop, linked their accounts to the project, and created a repository for the 'burgerOrder' project. The group has also begun creating files and directories for various items such as 'Reflections' for the 'Engineer’s Diary' and 'Main', where the primary code will be located.
+
+We have used 'git add *', 'git commit', 'git commit -m "lorem ipsum"', 'git push', 'git fetch', 'git pull', 'git switch', and 'git branch'.
+
+
+Git add [argument]
+
+'git add' is the command that adds the modifications you've made to the repo. If you've modified a file, added a file, or created a new folder, you should always use 'git add' to prepare the changes for upload to GitHub so that your project members can view them later or for public access. Additionally, 'git add' uses arguments to specify what you want to upload, such as '' or '[FILEPATH]', where '' uploads all modified files and '[FILEPATH]' uploads only the specific file you modified or added.
+
+
+Git commit [options] [argument]
+
+'git commit' is the command that takes the modifications you’ve made to the repo (and staged using 'git add') and prepares them to be uploaded to GitHub. You can also use options with 'git commit', such as choosing whether to use VIM or directly provide a commit description using '-m'. When using '-m', you can write a description immediately after, which will be used as the commit title, avoiding the need to deal with VIM. [argument] refers to the description you want to include with the commit when using '-m'.
+
+
+Git push [argument]
+
+'git push' is the command that sends all the modifications saved by 'git commit' to the GitHub repo on the website 'GitHub.com'. 'git push' is the final command you use to upload all your changes. With 'git push', you can also include [argument], such as '[FILEPATH]', to upload a specific code instead of all the modified code.
+
+
+Git fetch
+
+'git fetch' is used after you’ve pushed your code with 'git push'. When you want to compare or replace your local code with what’s in the GitHub repo, or if you get an error message when trying to upload modified code, you use 'git fetch'. 'git fetch' retrieves all the information from the repo, and with another command, 'git pull', you can fetch the data you need locally. If you encounter errors saying that you're behind on version when pushing code, you use 'git fetch' and 'git pull'.
+
+
+Git pull
+
+'git pull' is used together with 'git fetch'. 'git pull' retrieves the modifications that 'git fetch' has prepared for updating from the GitHub repo.
+
+
+Git switch [argument]
+
+'git switch' is the command that allows you to manually switch from one branch to another. This means if you use 'git switch', you transition from one branch version to an entirely different branch version, receiving the code and version present in that specific branch. If a branch is behind the 'main' branch and you use 'git switch', the branch you’re on will change to that version. With 'git switch', you can specify which branch you want to switch to using [argument], where you indicate the branch name. In our project, you can use 'git switch maintenance' and 'git switch main', which are the two branches we have.
+
+
+Git branch
+
+'git branch' is the command that tells you which branch you're currently in. 'git branch' has multiple functions, but so far we’ve only used it to check which branch we’re in. Otherwise, you can use 'git branch' to create, delete, or edit branches.
