@@ -1,24 +1,30 @@
 v.1 
-Det första vi gjort är att se till att alla har githubkonto - bara det en utmaning visade det sig. 
+We've made sure all group members have a github account. That alone proved to be a challenge.
 
-Nu när github är på plats för alla har vi förberett mappar för reflektioner, containers och planering enligt uppgiftsbeskrivningen. 
-Vi har även gjort mappa för databas och server som vi kommer behöva senare.
+With github in place, we've prepared directories for reflections, containers and planning according to the specifics of the assignment.
+We've also made directories for the database and server that we will need later.
 
-Vi har testat att committa och allt funkar.
-git kommandon som används är:
+We've made out first commits and everything seems to be working.
+
+The git commands used are:
 
 git commit  - för att commita det vi gjort. Viktigt här att beskriva sitt commit enligt instruktionerna, något vi implementerar från start.
-git commit -m
-git add - för att lägga till
-git switch -
-git fetch -
-git pull -
+git commit - commit changes to the branch you´re working in. It's important to describe the commit as it is part of the examination, something we'er implementing in the group from start.
+git add - add changes
+git switch - switch branch
+git fetch - updates remote tracking branches
+git merge - merge branches
+git pull - combines git fetch and git merge to update the local branch with changes
 
-För att hålla en main branch utan fel har vi skapat en maintenance branch. Där är tanken att alla våra ändringar ska ske först innan vi mergear den med main. 
-Vi planerar också att inte arbeta i samma fil samtidigt för att undvika konflikter.
+Our aim is to keep a main branch without faults, alas the maintenance branch! This is where we vill make all changes and make sure everything is working before merging it with the main branch. 
+We're also planning on not working in the same file at the same time to avoid conflicts.
 
-De svårigheter jag har stött på är att hålla koll på gitkommandon och bli bekväm i miljön. Det är första gången jag använder github, men jag tror att jag har fattat hur det funkar i stort nu.
+The difficulties I've encountered so far is using the git commands in the right way and felling comfortable in the environment we're working with. It's the first time I've used github, but I think I'm
+getting the hang of it now. I just need to remember to git pull after git fetch! A mistake I've made, and won't make again.
 
-Såhär i början är det mycket som jag inte riktigt vet hur vi ska lösa längre fram. Det här med containers och databaser har jag inte riktigt satt mig in i än, och det kan bli en utmaning eftersom det verkar som att vi kommer behöva använda flera olika språk. 
+As we're just in the beginning of the process there are parts of the assignment that I'm not sure how to solve yet. I'm not yet comfortable with using containers and databases so that might prove a challenge.
 
-Det kan bli ett problem med servern.
+v.2
+-Set up stuff using the files in the github directory Mikael shared.
+-Installed podman. 
+-Used exercise 8 to understand containers and images.
