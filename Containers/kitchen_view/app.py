@@ -7,11 +7,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def frontpage():
-   """ Defines a route for the home page of a Flask application.
-       'Flask is a Python web framework used to build web applications'."""
+    """
+    Defines a route for the home page of a Flask application.
+    'Flask is a Python web framework used to build web applications'.
+    """
        
     print('Loading front page', flush = True)
-    return"Welcome!"
+    return "<strong><h1 style='text-align: center; color: green; background-color: orange;'>Here is the kitchen view!</h1></strong>"
 
 def buy(burger_name):
     

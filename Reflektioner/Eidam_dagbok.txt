@@ -38,3 +38,10 @@ Git switch [argument]
 Git branch
 
 'git branch' is the command that tells you which branch you're currently in. 'git branch' has multiple functions, but so far we’ve only used it to check which branch we’re in. Otherwise, you can use 'git branch' to create, delete, or edit branches.
+
+
+26/09-24:
+
+    We have added test code for app.py inside of burger_orderer and we got flask python to work, we re planning to make kitchenView accessible through flask as well, create the database and decide on what kinds of burgers and extras you can have, remove and add on your burger.
+
+    After making the entire connection between burger_orderer, kitchenView and the database we plan on creating an image and make the 
