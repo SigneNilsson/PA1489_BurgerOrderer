@@ -8,6 +8,7 @@ We've made out first commits and everything seems to be working.
 
 The git commands used are:
 
+git clone - making a clone of the branch.
 git commit  - för att commita det vi gjort. Viktigt här att beskriva sitt commit enligt instruktionerna, något vi implementerar från start.
 git commit - commit changes to the branch you´re working in. It's important to describe the commit as it is part of the examination, something we'er implementing in the group from start.
 git add - add changes
@@ -25,8 +26,14 @@ getting the hang of it now. I just need to remember to git pull after git fetch!
 As we're just in the beginning of the process there are parts of the assignment that I'm not sure how to solve yet. I'm not yet comfortable with using containers and databases so that might prove a challenge.
 
 v.2
--Set up stuff using the files in the github directory Mikael shared.
+Day 1
+-Set up burger orderer with help from the github directory Mikael shared.
 -Installed podman. 
 -Used exercise 8 to understand containers and images.
 
--put up files. 
+Day 2
+-put up files.
+-Set up kitchen view.
+-Tested burger orderer on localhost, and it worked! We have a simple frontpage showing 
+the available burgers.
+
