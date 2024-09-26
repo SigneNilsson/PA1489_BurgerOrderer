@@ -28,3 +28,5 @@ v.2
 -Set up stuff using the files in the github directory Mikael shared.
 -Installed podman. 
 -Used exercise 8 to understand containers and images.
+
+-put up files. 
