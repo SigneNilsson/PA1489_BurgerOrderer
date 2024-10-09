@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import request
+from flask import Flask, request, url_for
 import os 
 import requests
 
@@ -31,9 +30,9 @@ def renderFrontpage():
     
     for b in getBurgers():
         pg += "<LI>" + b['name']
-
+#request.form.get('burgers', '')
     pg += "</UL>"
-    pg += f"<form action='{sendToKitchen(request.form.get('burgers', '0', 'test'))}' method='GET'>"
+    pg += f"<form action='' method='GET'>"
 
     for burgers in getBurgers():
         pg += f"<label for='{burgers['name']}'>{burgers['name']}</label>"
@@ -41,6 +40,7 @@ def renderFrontpage():
 
     pg += "<input type='submit' value='Submit'>"
     #pg += f"<button type='button' onClick''>forwarding test</button>"
+    {sendToKitchen(request.form.get('burgers', ''), ['pickle', 'bread'])}
     pg += "</form>"
     return pg
 
@@ -58,6 +58,7 @@ def makeURL(burgerName):
     return baseURL + '/buy/' + burgerName
 
 def addOptions(url, args):
+    print(url)
     if 0!=len(args):
         url += '?'
         for arg in args:
@@ -66,7 +67,9 @@ def addOptions(url, args):
 
 def sendToKitchen(burgerName, args):
     requrl = makeURL(burgerName)
-    requrl = addOptions(requrl, args) 
+    print(args)
+    print("jag vill inte mer ")
+    requrl = addOptions(requrl, args)
 
     print('Using KitchenView URL: ' + requrl)
     requests.get(requrl)
@@ -76,8 +79,8 @@ def sendToKitchen(burgerName, args):
 @app.route('/buy/<burgerName>', methods=['get'])
 def buy(burgerName):
     print('Placing an order on ' + burgerName)
-    sendToKitchen(burgerName, requests.args)
-    return renderOrderingPage(burgerName)
+    sendToKitchen(burgerName,  '')#requests.args
+    return renderOrderingPage(burgerName, request.args)
 
 
 if __name__ == "__main__":
