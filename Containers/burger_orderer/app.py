@@ -89,7 +89,7 @@ def sendToKitchen(burgerName, args):
         print('Using KitchenView URL: ' + requrl)
         requests.get(requrl)
         
-        return
+        return 
     return print("Please choose a burger.")
 
 
