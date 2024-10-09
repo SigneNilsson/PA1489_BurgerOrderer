@@ -21,7 +21,7 @@ def renderFrontpage():
         pg += "<LI>" + b["name"]
 
     pg += "</UL>"
-    pg += f"<form action='{sendToKitchen(request.form.get('burgers', '0'), "test")}' method='GET'>"
+    pg += f"<form action='{sendToKitchen(request.form.get('burgers', '0'), "")}' method='GET'>"
 
     for burgers in getBurgers():
         pg += f"<label for='{burgers["name"]}'>{burgers["name"]}</label>"
