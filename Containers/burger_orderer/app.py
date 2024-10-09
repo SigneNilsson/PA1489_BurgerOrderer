@@ -8,15 +8,15 @@ app = Flask(__name__)
 staticBurgers= [
     {
         "name": "Mostafaburgare",
-        "ingredients": ["bread", "halloumi", "sauce", "onion", "salad", "avocado"]
-    },
-    {
-        "name": "Eidamburgare",
-        "ingredients": ["bread", "lök", "sås", "sallad", "tomat", "gurka"]
+        "ingredients": ["bread", "plantbeef", "sauce","onion", "salad", "tomato", "cucumber"]
     },
     {
         "name": "Signeburgare",
-        "ingredients": ["bread", "cheddar", "saltgurka", "ranchmajo", "portabellosvamp"]
+        "ingredients": ["bread", "halloumi","sauce", "onion", "salad", "avocado"]
+    },
+    {
+        "name": "Eidamburgare",
+        "ingredients": ["bread", "meat","cheddar", "pickle", "ranch mayo", "portabello mushroom"]
     }
 ]
 
