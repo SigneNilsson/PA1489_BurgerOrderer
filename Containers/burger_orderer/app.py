@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for
+from flask import Flask, request, redirect
 import os 
 import requests
 
@@ -7,15 +7,15 @@ app = Flask(__name__)
 staticBurgers= [
     {
         'name': "Mostafaburgare",
-        "ingredients": ["bread", "plantbeef", "sauce","onion", "salad", "tomato", "cucumber"]
+        "ingredients": ["bread", "plantbeef", "sauce", "onion", "salad", "tomato", "cucumber"]
     },
     {
         'name': "Signeburgare",
-        "ingredients": ["bread", "halloumi","sauce", "onion", "salad", "avocado"]
+        "ingredients": ["bread", "halloumi", "sauce", "onion", "salad", "avocado"]
     },
     {
         'name': "Eidamburgare",
-        "ingredients": ["bread", "meat","cheddar", "pickle", "ranch mayo", "portabello mushroom"]
+        "ingredients": ["bread", "meat", "cheddar", "pickle", "ranch mayo", "portabello mushroom"]
     }
 ]
 
@@ -25,12 +25,15 @@ def getBurgers():
 
 
 def renderFrontpage():
+    """
+    Renders the main page of the burger_orderer project
+    """
     pg = "<h1>Welcome to BurgerOrderer</h1>"
     pg += "<P><UL>"
     
     for b in getBurgers():
         pg += "<LI>" + b['name']
-#request.form.get('burgers', '')
+
     pg += "</UL>"
     pg += f"<form action='' method='GET'>"
 
@@ -40,25 +43,37 @@ def renderFrontpage():
 
     pg += "<input type='submit' value='Submit'>"
     #pg += f"<button type='button' onClick''>forwarding test</button>"
-    {sendToKitchen(request.form.get('burgers', ''), ['pickle', 'bread'])}
+    
+    sendToKitchen(request.args.get('burgers', '0'), ['pickle', 'bread'])
     pg += "</form>"
+    if request.args.get('burgers', '0') == '0':
+        pg += "<strong>Please choose a burger.</strong>"
+
     return pg
 
 def renderOrderingPage(burgerName, args):
-    return 'ordered ' + burgerName
+    """
+    Confirmation that the customers burger order has been made and what they ordered.
+    """
+    return 'ordered ' + burgerName + ' without following toppings: ' + (', '.join(str(arg) for arg in args))
     
 @app.route('/')
 def frontpage():
+    """
+    Calls the frontpage function and prints the frontpage
+    """
     return renderFrontpage()
 
 #baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
 baseURL = 'http://localhost:5000'
 
 def makeURL(burgerName):
+    """
+    creates a REST API URL to prepare communication with the kitchen view
+    """
     return baseURL + '/buy/' + burgerName
 
 def addOptions(url, args):
-    print(url)
     if 0!=len(args):
         url += '?'
         for arg in args:
@@ -66,20 +81,22 @@ def addOptions(url, args):
     return url
 
 def sendToKitchen(burgerName, args):
-    requrl = makeURL(burgerName)
-    print(args)
-    print("jag vill inte mer ")
-    requrl = addOptions(requrl, args)
+    if burgerName != "0":
+        requrl = makeURL(burgerName)
+        requrl = addOptions(requrl, args)
+        #redurl = addOptions('http://localhost:8000/buy/' + burgerName, args)
 
-    print('Using KitchenView URL: ' + requrl)
-    requests.get(requrl)
-    return
-   
+        print('Using KitchenView URL: ' + requrl)
+        requests.get(requrl)
+        
+        return
+    return print("Please choose a burger.")
+
 
 @app.route('/buy/<burgerName>', methods=['get'])
 def buy(burgerName):
     print('Placing an order on ' + burgerName)
-    sendToKitchen(burgerName,  '')#requests.args
+    sendToKitchen(burgerName,  '')
     return renderOrderingPage(burgerName, request.args)
 
 
