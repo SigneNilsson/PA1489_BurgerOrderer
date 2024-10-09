@@ -1,7 +1,7 @@
 from flask import Flask
-from flask import Request
+from flask import request
 import os 
-#import requests
+import requests
 
 app = Flask(__name__)
 
@@ -31,10 +31,10 @@ def renderOrderingPage(burgerName, args):
 def frontpage():
     return renderFrontpage()
 
-#baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
+baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
 
-""" def makeURL(burgerName):
-    return baseURL + '/buy/' + burgerName """
+def makeURL(burgerName):
+    return baseURL + '/buy/' + burgerName
 
 def addOptions(url, args):
     if 0!=len(args):
@@ -43,19 +43,19 @@ def addOptions(url, args):
             url += arg + '&'
     return url
 
-""" def sendToKitchen(burgerName, args):
+def sendToKitchen(burgerName, args):
     requrl = makeURL(burgerName)
     requrl = addOptions(requrl, args) 
 
     print('Using KitchenView URL: ' + requrl)
     requests.get(requrl)
     return
-    """
+   
 
 @app.route('/buy/<burgerName>', methods=['get'])
 def buy(burgerName):
     print('Placing an order on ' + burgerName)
-    #sendToKitchen(burgerName, requests.args)
+    sendToKitchen(burgerName, requests.args)
     return renderOrderingPage(burgerName)
 
 
