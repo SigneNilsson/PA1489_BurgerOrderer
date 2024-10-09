@@ -21,6 +21,15 @@ def renderFrontpage():
         pg += "<LI>" + b["name"]
 
     pg += "</UL>"
+    pg += f"<form action='{sendToKitchen(request.form.get('burgers', '0'), "test")}' method='GET'>"
+
+    for burgers in getBurgers():
+        pg += f"<label for='{burgers["name"]}'>{burgers["name"]}</label>"
+        pg += f"<input type='radio' name='burgers' value='{burgers["name"]}'><br><br>"
+
+    pg += "<input type='submit' value='Submit'>"
+    #pg += f"<button type='button' onClick''>forwarding test</button>"
+    pg += "</form>"
     return pg
 
 def renderOrderingPage(burgerName, args):
@@ -30,7 +39,8 @@ def renderOrderingPage(burgerName, args):
 def frontpage():
     return renderFrontpage()
 
-baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
+#baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
+baseURL = 'http://localhost:5000'
 
 def makeURL(burgerName):
     return baseURL + '/buy/' + burgerName
