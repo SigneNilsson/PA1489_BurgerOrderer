@@ -5,18 +5,18 @@ import requests
 
 app = Flask(__name__)
 
-staticBurgers= staticBurgers = [
+staticBurgers= [
     {
-        "name": "Mostafaburgare",
-        "ingredients": ["bread", "halloumi", "sauce", "onion", "salad", "avocado"]
+        'name': "Mostafaburgare",
+        "ingredients": ["bread", "plantbeef", "sauce","onion", "salad", "tomato", "cucumber"]
     },
     {
-        "name": "Eidamburgare",
-        "ingredients": ["bread", "lök", "sås", "sallad", "tomat", "gurka"]
+        'name': "Signeburgare",
+        "ingredients": ["bread", "halloumi","sauce", "onion", "salad", "avocado"]
     },
     {
-        "name": "Signeburgare",
-        "ingredients": ["bread", "cheddar", "saltgurka", "ranchmajo", "portabellosvamp"]
+        'name': "Eidamburgare",
+        "ingredients": ["bread", "meat","cheddar", "pickle", "ranch mayo", "portabello mushroom"]
     }
 ]
 
@@ -30,14 +30,14 @@ def renderFrontpage():
     pg += "<P><UL>"
     
     for b in getBurgers():
-        pg += "<LI>" + b["name"]
+        pg += "<LI>" + b['name']
 
     pg += "</UL>"
-    pg += f"<form action='{sendToKitchen(request.form.get('burgers', '0'), "")}' method='GET'>"
+    pg += f"<form action='{sendToKitchen(request.form.get('burgers', '0', 'test'))}' method='GET'>"
 
     for burgers in getBurgers():
-        pg += f"<label for='{burgers["name"]}'>{burgers["name"]}</label>"
-        pg += f"<input type='radio' name='burgers' value='{burgers["name"]}'><br><br>"
+        pg += f"<label for='{burgers['name']}'>{burgers['name']}</label>"
+        pg += f"<input type='radio' name='burgers' value='{burgers['name']}'><br><br>"
 
     pg += "<input type='submit' value='Submit'>"
     #pg += f"<button type='button' onClick''>forwarding test</button>"
