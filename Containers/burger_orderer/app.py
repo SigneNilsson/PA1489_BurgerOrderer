@@ -5,9 +5,21 @@ import requests
 
 app = Flask(__name__)
 
-staticBurgers= [{"name":"Mostafaburgare"},
-                {"name":"Eidamburgare"},
-                {"name":"Signeburgare"}]
+staticBurgers= staticBurgers = [
+    {
+        "name": "Mostafaburgare",
+        "ingredients": ["bread", "halloumi", "sauce", "onion", "salad", "avocado"]
+    },
+    {
+        "name": "Eidamburgare",
+        "ingredients": ["bread", "lök", "sås", "sallad", "tomat", "gurka"]
+    },
+    {
+        "name": "Signeburgare",
+        "ingredients": ["bread", "cheddar", "saltgurka", "ranchmajo", "portabellosvamp"]
+    }
+]
+
 
 def getBurgers():
     return staticBurgers
