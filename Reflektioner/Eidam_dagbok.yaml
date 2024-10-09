@@ -1,0 +1,32 @@
+12/9-2024:
+  Gruppen har installerat, satt upp Github och Github desktop, kopplat sina konton till projektet samt skapat ett Reprository till 'burgerOrder' projektet. Gruppen har också påbörjat med att skapa filer samt kataloger för diverse filer såsom 'Reflektioner' för 'Ingenjörsdagbok' och 'Main', där den primära koden kommer befinna sig.
+
+  Vi har använt oss av 'git add *', 'git commit', 'git commit -m "lorem ipsum"'', ' 'git push', 'git fetch', 'git pull', 'git switch' och 'git branch'.
+
+  Git add [argument]
+  -------------------
+  'git add' är det kommando som lägger till de modifiering man har gjort i repot, om man har modifierat en fil, lagt till en fil eller lagt till en ny mapp så ska man alltid använda sig av 'git add' för att förändringarna ska förberedas att skickas upp till Github för att ens projekt medlemmar ska kunna se senare eller för det offentliga ögat. Därpå så använder 'git add' argument som man kan ha med om man vill skicka upp något specifikt. såsom '*' eller '[FILEPATH]' där man alltså skickar upp allt som man har modiferat om man använder sig av * samt skickar upp just den fil som man har modiferat eller lagt till om man använder sig av '[FILEPATH]'.
+
+  Git commit [options] [argument]
+  -------------------------------
+  'git commit' är det kommando som tar de modifieringar man har gjort på repot och skickat upp med hjälp av 'git add' och förbereder modifieringarna att skickas upp till Github. Tillsammans med 'git commit' så kan man använda sig av "options" eller "inställningar" där man kan välja om man ska använda VIM eller till exempel skicka ett direkt 'commit beskrivning' med hjälp av '-m'. Om man använder '-m' som inställning så kan man skriva direkt efter '-m' en beskrivning som kommer användas som commit titel, samt så slipper man att mecha med VIM. [argument] är alltså vad för beskrivning man vill ha med commiten om man använder '-m' till sin commit.
+
+  Git push [argument]
+  -------------------
+  'git push' är det kommando som tar alla modiferingar som sparats i 'git commit' och skickar upp dem till Github repot på webbsidan 'Github.com', 'git push' är det sista kommandot man använder när man ska skicka upp alla sina modifieringar. Tillsammans med 'git push' så kan man skicka med [argument] såsom '[FILEPATH]' vilket man kan använda för att skicka upp en specifik kod istället för all kod man har modifierat.
+
+  Git fetch
+  ----------
+  'git fetch' används när man väl har skickat upp sin kod med 'git push', när man vill jämföra och byta ut den koden man har med det som finns på Github repot eller när man får ett felmeddelande när man ska skicka upp modiferad kod, så använder man sig av 'git fetch'. 'git fetch' hämtar alltså all info som finns på repot och med hjälp av ett annat kommando, 'git pull', så kan man hämta den info man vill ha lokalt. Om man försöker skicka upp kod med 'git fetch' så kan error meddelanden som säger att man inte kan skicka upp kod eftersom att man ligger bakom i version så använder man sig av 'git fetch' och 'git pull'. 
+
+  Git pull
+  --------
+  'git pull' används tillsammans med 'git fetch', 'git pull' hämtar alltså dem modifieringar som 'git fetch' har förberett för uppdatering från repot på Github. 
+
+  Git switch [argument]
+  ---------------------
+  'git switch' är det kommando som möjliggör manuell övergång från en branch till en annan, vilket betyder om man använder sig av 'git switch' så övergår man från en branch version till en helt annan branch version, där man får den kod och version som finns på den respektive branch. Om en branch ligger bakom 'main' branchen och man använder sig av 'git switch' så kommer den branch man är på förändra den version man har. Tillsammans med 'git switch' så kan man specifiera vad för branch man vill byta till med hjälp av '[argument]' där man skriver vilken branch man vill byta till. I vårat projekt så kan man använda sig av 'git switch maintenance' och 'git switch main' vilket är de två branches vi har. 
+
+  Git branch
+  ----------
+  'git branch' är det kommand som kan berätta vilken branch man är i just nu, 'git branch' har flera funktioner men änsålänge så har vi inte använt den till mer än att kolla vilken branch man är i. Annars kan man använda sig av 'git branch' för att skapa, radera eller redigera branches. 
