@@ -18,10 +18,11 @@ staticBurgers = [
         "ingredients": ["bread", "meat", "cheddar", "pickle", "ranch mayo", "portabello mushroom"]
     }
 ]
+# A list of dictionaries representing different burgers and their ingredients.
 
 def getBurgers():
     return staticBurgers
-
+# Returns the list of static burgers.
 def renderFrontpage():
     pg = "<h1>Welcome to BurgerOrderer</h1>"
     pg += "<P><UL>"
@@ -56,15 +57,20 @@ def renderFrontpage():
         sendToKitchen(burger_name, add_ingredients, remove_ingredients)
 
     return pg
+#Generates the HTML for the front page, including a list of burgers, radio buttons to select a burger, and checkboxes to add or remove ingredients. 
+#It also handles form submission and calls sendToKitchen() if a burger is selected.
+
 
 def renderOrderingPage(burgerName, add_ingredients, remove_ingredients):
     return f'Ordered {burgerName} with added ingredients: {", ".join(add_ingredients)} and without: {", ".join(remove_ingredients)}'
+#Generates a confirmation message for the order.
 
 @app.route('/')
 def frontpage():
     return renderFrontpage()
 
 baseURL = 'http://localhost:5000'
+
 
 def makeURL(burgerName):
     return baseURL + '/buy/' + burgerName
@@ -84,6 +90,10 @@ def sendToKitchen(burgerName, add_ingredients, remove_ingredients):
         requests.get(requrl)
         return 
     return print("Please choose a burger.")
+#makeURL(): Constructs the URL for the order.
+#addOptions(): Adds query parameters for additional or removed ingredients.
+#sendToKitchen(): Sends the order to the kitchen by making an HTTP GET request to the constructed URL.
+
 
 @app.route('/buy/<burgerName>', methods=['get'])
 def buy(burgerName):
@@ -92,7 +102,8 @@ def buy(burgerName):
     print(f'Placing an order on {burgerName} with additions: {add_ingredients} and removals: {remove_ingredients}')
     sendToKitchen(burgerName, add_ingredients, remove_ingredients)
     return renderOrderingPage(burgerName, add_ingredients, remove_ingredients)
+#Handles the order placement, prints the order details, and calls sendToKitchen().
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8000)
-
+#Starts the Flask application on port 8000.
