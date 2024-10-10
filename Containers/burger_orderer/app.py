@@ -18,12 +18,16 @@ staticBurgers = [
         "ingredients": ["bread", "meat", "cheddar", "pickle", "ranch mayo", "portabello mushroom"]
     }
 ]
-# A list of dictionaries representing different burgers and their ingredients.
+
 
 def getBurgers():
     return staticBurgers
-# Returns the list of static burgers.
+
+
 def renderFrontpage():
+    """
+    Renders the main page of the burger_orderer project
+    """
     pg = "<h1>Welcome to BurgerOrderer</h1>"
     pg += "<P><UL>"
     
@@ -39,71 +43,64 @@ def renderFrontpage():
         pg += f"<label for='{burgers['name']}'>{burgers['name']}</label>"
         pg += f"<input type='radio' name='burgers' value='{burgers['name']}'><br><br>"
 
-    pg += "<h3>Choose ingredients to add or remove:</h3>"
-    all_ingredients = set(item for burger in getBurgers() for item in burger['ingredients'])
-    for ingredient in all_ingredients:
-        pg += f"<input type='checkbox' name='add_ingredients' value='{ingredient}'> Add {ingredient}<br>"
-        pg += f"<input type='checkbox' name='remove_ingredients' value='{ingredient}'> Remove {ingredient}<br>"
-
     pg += "<input type='submit' value='Submit'>"
+    #pg += f"<button type='button' onClick''>forwarding test</button>"
+    
+    sendToKitchen(request.args.get('burgers', '0'), ['pickle', 'bread'])
     pg += "</form>"
-
     if request.args.get('burgers', '0') == '0':
         pg += "<strong>Please choose a burger.</strong>"
-    else:
-        burger_name = request.args.get('burgers')
-        add_ingredients = request.args.getlist('add_ingredients')
-        remove_ingredients = request.args.getlist('remove_ingredients')
-        sendToKitchen(burger_name, add_ingredients, remove_ingredients)
 
     return pg
-#Generates the HTML for the front page, including a list of burgers, radio buttons to select a burger, and checkboxes to add or remove ingredients. 
-#It also handles form submission and calls sendToKitchen() if a burger is selected.
 
-
-def renderOrderingPage(burgerName, add_ingredients, remove_ingredients):
-    return f'Ordered {burgerName} with added ingredients: {", ".join(add_ingredients)} and without: {", ".join(remove_ingredients)}'
-#Generates a confirmation message for the order.
-
+def renderOrderingPage(burgerName, args):
+    """
+    Confirmation that the customers burger order has been made and what they ordered.
+    """
+    return 'ordered ' + burgerName + ' without following toppings: ' + (', '.join(str(arg) for arg in args))
+    
 @app.route('/')
 def frontpage():
+    """
+    Calls the frontpage function and prints the frontpage
+    """
     return renderFrontpage()
 
+#baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
 baseURL = 'http://localhost:5000'
 
-
 def makeURL(burgerName):
+    """
+    creates a REST API URL to prepare communication with the kitchen view
+    """
     return baseURL + '/buy/' + burgerName
 
-def addOptions(url, args, prefix):
-    if args:
-        url += '?' if '?' not in url else '&'
-        url += '&'.join([f'{prefix}={arg}' for arg in args])
+def addOptions(url, args):
+    if 0!=len(args):
+        url += '?'
+        for arg in args:
+            url += arg + '&'
     return url
 
-def sendToKitchen(burgerName, add_ingredients, remove_ingredients):
+def sendToKitchen(burgerName, args):
     if burgerName != "0":
         requrl = makeURL(burgerName)
-        requrl = addOptions(requrl, add_ingredients, 'add')
-        requrl = addOptions(requrl, remove_ingredients, 'remove')
+        requrl = addOptions(requrl, args)
+        #redurl = addOptions('http://localhost:8000/buy/' + burgerName, args)
+
         print('Using KitchenView URL: ' + requrl)
         requests.get(requrl)
+        
         return 
     return print("Please choose a burger.")
-#makeURL(): Constructs the URL for the order.
-#addOptions(): Adds query parameters for additional or removed ingredients.
-#sendToKitchen(): Sends the order to the kitchen by making an HTTP GET request to the constructed URL.
 
 
 @app.route('/buy/<burgerName>', methods=['get'])
 def buy(burgerName):
-    add_ingredients = request.args.getlist('add')
-    remove_ingredients = request.args.getlist('remove')
-    print(f'Placing an order on {burgerName} with additions: {add_ingredients} and removals: {remove_ingredients}')
-    sendToKitchen(burgerName, add_ingredients, remove_ingredients)
-    return renderOrderingPage(burgerName, add_ingredients, remove_ingredients)
-#Handles the order placement, prints the order details, and calls sendToKitchen().
+    print('Placing an order on ' + burgerName)
+    sendToKitchen(burgerName,  '')
+    return renderOrderingPage(burgerName, request.args)
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8000)
-#Starts the Flask application on port 8000.
