@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request
 import os 
 import requests
 
@@ -40,9 +40,15 @@ def renderFrontpage():
 
     pg += "<h3>Choose ingredients to add or remove:</h3>"
     all_ingredients = set(item for burger in getBurgers() for item in burger['ingredients'])
+    pg += "<strong>Add ingredients of your choice.</strong><br>"
     for ingredient in all_ingredients:
         pg += f"<input type='checkbox' name='add_ingredients' value='{ingredient}'> Add {ingredient}<br>"
+
+    
+    pg += "<strong>Remove ingredients from your burger.</strong><br>"
+    for ingredient in all_ingredients:
         pg += f"<input type='checkbox' name='remove_ingredients' value='{ingredient}'> Remove {ingredient}<br>"
+        
 
     pg += "<input type='submit' value='Submit'>"
     pg += "</form>"
@@ -54,7 +60,6 @@ def renderFrontpage():
         add_ingredients = request.args.getlist('add_ingredients')
         remove_ingredients = request.args.getlist('remove_ingredients')
         sendToKitchen(burger_name, add_ingredients, remove_ingredients)
-
     return pg
 
 def renderOrderingPage(burgerName, add_ingredients, remove_ingredients):
