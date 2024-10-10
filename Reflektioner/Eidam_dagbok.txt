@@ -44,4 +44,10 @@ Git branch
 
     We have added test code for app.py inside of burger_orderer and we got flask python to work, we re planning to make kitchenView accessible through flask as well, create the database and decide on what kinds of burgers and extras you can have, remove and add on your burger.
 
-    After making the entire connection between burger_orderer, kitchenView and the database we plan on creating an image and make the 
+
+
+9/10-24:
+
+    We have made a functional burger orderer in the app.py under the burger_orderer filepath, adding functionality through an HTML form in python flask where the customer chooses the burger, what they want to add onto their burger and what they want to remove from their burger. After submitting, the customer is supposed to be redirected to the /buy/ page so they can see their entire order. The /buy/ redirect URL is currently not working but will be debugged so that it redirects as planned. 
+
+    An sql database as well as tables for the burgers and ingredients have been created and will be added later on the next group meeting.
