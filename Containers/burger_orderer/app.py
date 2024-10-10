@@ -58,7 +58,6 @@ def renderFrontpage():
     pg += "<input type='submit' value='Submit'>"
     #pg += f"<button type='button' onClick''>forwarding test</button>"
     
-    sendToKitchen(request.args.get('burgers', '0'), ['pickle', 'bread'])
     pg += "</form>"
     if request.args.get('burgers', '0') == '0':
         pg += "<strong>Please choose a burger.</strong>"
@@ -98,11 +97,13 @@ def addOptions(url, args, prefix):
         url += '&'.join([f'{prefix}={arg}' for arg in args])
     return url
 
-def sendToKitchen(burgerName, add_ingredients, remove_ingredients):
+def sendToKitchen(burgerName, add_ingredients = None, remove_ingredients = None):
     if burgerName != "0":
         requrl = makeURL(burgerName)
-        requrl = addOptions(requrl, add_ingredients, 'add')
-        requrl = addOptions(requrl, remove_ingredients, 'remove')
+        if add_ingredients:
+            requrl = addOptions(requrl, add_ingredients, 'add')
+        if remove_ingredients:
+            requrl = addOptions(requrl, remove_ingredients, 'remove')
 
         print('Using KitchenView URL: ' + requrl)
         requests.get(requrl)
