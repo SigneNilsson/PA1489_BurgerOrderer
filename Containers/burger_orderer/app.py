@@ -32,7 +32,9 @@ def renderFrontpage():
     pg += "<P><UL>"
     
     for b in getBurgers():
-        pg += "<LI>" + b['name']
+        pg += "<LI>" + b['name'] + " - "
+        for items in b["ingredients"]:
+            pg += items + ", " 
 
     pg += "</UL>"
     pg += f"<form action='' method='GET'>"
