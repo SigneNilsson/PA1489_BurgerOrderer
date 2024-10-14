@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS menu_store;
+
+USE menu_store;
+
+CREATE TABLE IF NOT EXISTS testBurgers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    burgername VARCHAR(50) NOT NULL
+);
+

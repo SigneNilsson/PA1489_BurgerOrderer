@@ -46,8 +46,19 @@ have to think about a bit more.
 
 Another problem om mine is that the commits i made yesterday are gone since I forgot to push them. A mistake I won't make again.
 ___
-Database - 
-Today i've searched a lot about information on how to set up containers. I tested getting an image for a mysql database with the following command: podman pull docker.io/library/mysql:latest and it worked.
-Overjoyed with it working I made a script of it.
+Database - todays aim is to create the database and the container for it.
 
+Today i've searched a lot of information on how to set up containers. I tested getting an image for a mysql database with the following command: podman pull docker.io/library/mysql:latest and it worked.
+Overjoyed with it working I made a script of it. I also made a sql script that creates a database (menuStore) with a table(starting with just one to test it out).
 
+I made lots of tests on how to make the container based on an mysql image working. I've had lots of problems using the syntax and getting the right paths to the files. I've also had problems with the podman cp command.
+As far as I understand it's common that it's not working correctly on Windows so I had to use WSL. It was tricky since the ports used don't seem to close when I retry to run the script. Thats why it's currently said to
+expose on port 5006. I started out at port 5001 and tried my way up getting errors like "Error: rootlessport listen tcp 0.0.0.0:5001: bind: address already in use." Every time I run the script and something goes wrong(as I said, I've 
+had lots of syntax problems trying to get the path right etc.) I have to change port. I tried adding 
+podman stop menuStore
+podman rm menuStore
+at the start of the script trying to stop and remove any existing containers with the same name, but it does not work. At the moment I'm happy just to have a script creating a container with a database that's working. 
+
+Next up is creating tables and data in the database, something I know Eidam has started already. We also need to create containers for the kitchen view and the burger orderer and connect it all. 
+
+I'm a bit stressed because we've not been able to meet all together in the group in a while due to sickness and will have lots to do this week before the assignment is due. 
