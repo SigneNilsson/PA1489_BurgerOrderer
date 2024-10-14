@@ -46,5 +46,8 @@ have to think about a bit more.
 
 Another problem om mine is that the commits i made yesterday are gone since I forgot to push them. A mistake I won't make again.
 ___
+Database - 
+Today i've searched a lot about information on how to set up containers. I tested getting an image for a mysql database with the following command: podman pull docker.io/library/mysql:latest and it worked.
+Overjoyed with it working I made a script of it.
 
 
