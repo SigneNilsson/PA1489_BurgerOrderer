@@ -1,5 +1,5 @@
-from flask import Flask, request
-import os
+from flask import Flask, request, jsonify
+#import os
 import requests
 
 app = Flask(__name__)
@@ -39,12 +39,12 @@ def renderFrontpage():
         pg += "</LI></br>"
 
     pg += "</UL>"
-    pg += f"<form action='/buy/' method='GET'>"
+    pg += f"<form action='/burgers2' method='GET'>"
 
     pg += "<h3>Choose your burger:</h3>"
     for burgers in getBurgers():
         pg += f"<label for='{burgers['name']}'>{burgers['name']}</label>"
-        pg += f"<input type='radio' name='burgers' value='{burgers['name']}'><br></br>"
+        pg += f"<input type='radio' name='burgers' value='{burgers['name']}' checked><br></br>"
         all_ingredients = set(item for burger in getBurgers()
                               for item in burger['ingredients'])
 
@@ -61,12 +61,7 @@ def renderFrontpage():
 
     if request.args.get('burgers', '0') == '0':
         pg += "<strong>Please choose a burger.</strong>"
-    """ else:
-        print("2")
-        burger_name = request.args.get('burgers')
-        add_ingredients = request.args.getlist('add_ingredients')
-        remove_ingredients = request.args.getlist('remove_ingredients')
-        buy2(burger_name, add_ingredients, remove_ingredients) """
+
     return pg
 
 
@@ -74,7 +69,7 @@ def renderOrderingPage(burgerName, add_ingredients, remove_ingredients):
     """
     Confirmation that the customers burger order has been made and what they ordered.
     """
-    return f'Ordered {burgerName} with added ingredients: {", ".join(add_ingredients)} and without: {", ".join(remove_ingredients)}'
+    return f'Ordered <strong>{burgerName}</strong> with added ingredients: <strong>{", ".join(add_ingredients)}</strong> and without: <strong>{", ".join(remove_ingredients)}</strong>'
 
 
 @app.route('/')
@@ -87,10 +82,10 @@ def frontpage():
 
 @app.route('/burgers2', methods=['get'])
 def buy2():
-    return buy()
+    return buy(request.args.get('burgers'), request.args.getlist('add_ingredient'), request.args.getlist('remove_ingredient'))
 
 
-# baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
+#baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
 baseURL = 'http://localhost:5000'
 
 
@@ -98,7 +93,6 @@ def makeURL(burgerName):
     """
     creates a REST API URL to prepare communication with the kitchen view
     """
-    print("makeurl")
     return baseURL + '/buy/' + burgerName
 
 
@@ -118,23 +112,21 @@ def sendToKitchen(burgerName, add_ingredients=None, remove_ingredients=None):
             requrl = addOptions(requrl, remove_ingredients, 'remove')
 
         print('Using KitchenView URL: ' + requrl)
-        requests.get(requrl)
+        requests.get("http://localhost:5000", {'url': requrl})
 
-        return
+        return 
     return print("Please choose a burger.")
 
 
 @app.route('/buy/<burgerName>', methods=['get'])
-def buy():
-    burgerName = request.args.get('burgers')
-    add_ingredients = request.args.getlist('add_ingredient')
-    remove_ingredients = request.args.getlist('remove_ingredient')
+def buy(burgerName, add_ingredients=None, remove_ingredients=None):
 
     print(
         f'Placing an order on {burgerName} with additions: {add_ingredients} and removals: {remove_ingredients}')
+    
     sendToKitchen(burgerName, add_ingredients, remove_ingredients)
     return renderOrderingPage(burgerName, add_ingredients, remove_ingredients)
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=8000)
+    app.run(debug=True, host="0.0.0.0", port=8080)
