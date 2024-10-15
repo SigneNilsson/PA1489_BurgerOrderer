@@ -51,3 +51,13 @@ Git branch
     We have made a functional burger orderer in the app.py under the burger_orderer filepath, adding functionality through an HTML form in python flask where the customer chooses the burger, what they want to add onto their burger and what they want to remove from their burger. After submitting, the customer is supposed to be redirected to the /buy/ page so they can see their entire order. The /buy/ redirect URL is currently not working but will be debugged so that it redirects as planned. 
 
     An sql database as well as tables for the burgers and ingredients have been created and will be added later on the next group meeting.
+
+15/10-24:
+
+    I have started further developing the REST API connection between burger_orderer and kitchen_view so that the GUI (Graphical User Interface) is much clearer to both the customer and kitchen staff. 
+
+    Added settings inside of the requirements and Dockerfile files for the kitchen_view container, as well as tested and established working containers and images for both burger_orderer and kitchen_view, also tried the connection between the containers and they are working although burger_orderer has slight issues by sending more requests to the kitchen_view than intended resulting in request.connection errors for the burger_orderer side, although kitchen_view receives the order from burger_orderer without any issues whatsoever.
+
+    I have also done some cleaning in the code, legacy code who was thought of as being used but after further investigation and debugging resulted in being placebo code, hence the code is slightly cleaner.
+
+    I ran into issues regarding cleaning the code whereas legacy code was being used by various functions, so resolving those problems came first before cleaning the code could be finished, rewriting certain areas of the code, adding and removing lines and cleaning legacy that had no more functionality.
