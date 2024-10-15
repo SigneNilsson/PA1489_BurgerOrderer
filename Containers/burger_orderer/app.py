@@ -39,7 +39,7 @@ def renderFrontpage():
         pg += "</LI></br>"
 
     pg += "</UL>"
-    pg += f"<form action='/burgers2' method='GET'>"
+    pg += f"<form action='/buy/' method='GET'>"
 
     pg += "<h3>Choose your burger:</h3>"
     for burgers in getBurgers():
@@ -87,7 +87,7 @@ def frontpage():
 
 @app.route('/burgers2', methods=['get'])
 def buy2():
-    return buy(request.args.get('burgers'), request.args.getlist('add_ingredient'), request.args.getlist('remove_ingredient'))
+    return buy()
 
 
 # baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
@@ -98,6 +98,7 @@ def makeURL(burgerName):
     """
     creates a REST API URL to prepare communication with the kitchen view
     """
+    print("makeurl")
     return baseURL + '/buy/' + burgerName
 
 
@@ -124,9 +125,10 @@ def sendToKitchen(burgerName, add_ingredients=None, remove_ingredients=None):
 
 
 @app.route('/buy/<burgerName>', methods=['get'])
-def buy(burgerName, add_ingredients=None, remove_ingredients=None):
-    """ add_ingredients = request.args.getlist('add')
-    remove_ingredients = request.args.getlist('remove') """
+def buy():
+    burgerName = request.args.get('burgers')
+    add_ingredients = request.args.getlist('add_ingredient')
+    remove_ingredients = request.args.getlist('remove_ingredient')
 
     print(
         f'Placing an order on {burgerName} with additions: {add_ingredients} and removals: {remove_ingredients}')
