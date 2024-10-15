@@ -62,3 +62,15 @@ at the start of the script trying to stop and remove any existing containers wit
 Next up is creating tables and data in the database, something I know Eidam has started already. We also need to create containers for the kitchen view and the burger orderer and connect it all. 
 
 I'm a bit stressed because we've not been able to meet all together in the group in a while due to sickness and will have lots to do this week before the assignment is due. 
+---
+
+A bit of explanation on yesterdays commit: To start the container you need to go to the db folder and run the script for creating the database using ./create_database.sh, then you need to enter: podman exec -it menuStore /bin/bash to the terminal to
+enter the container. The exec command is used to run the process in the container. The problem from yesterday has not magically disappeared over night, everytime I try to create the database I have to change port.
+
+The aim of today is to focus on the documentation and start thinking about documenting some tests. We test our code all the time in for example localhost to see the front page of the burger orderer and how it changes
+when we alter the code. At the moment the burger orderer page isn't working as we want to because when we enter submit on our order, the page isn't changing as we want to. Even though the terminal running the kitchen view app
+does require information the way we want to when a burger is ordered. At the moment I'm thinking we need to change the burgerorderer to a simpler version to be able to test it as the inputs for adding and removing ingredients
+is not working the way we want to. 
+
+I'm also realizing we have no automated tests as we should have. We've been talking about pytest to make some automated test, but at the moment it's hard to know how to use it on our project. We have installed pytest to try it out. I will read about automated tests
+today hoping to gain some clarity.

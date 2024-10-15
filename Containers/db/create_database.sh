@@ -12,7 +12,7 @@ containerName="menuStore"
 password="bestgroupever"
 
 # Creating the MySQL database container with chosen name and password, running on port 5006
-podman run --name $containerName -e MYSQL_ROOT_PASSWORD=$password -d -p 5006:3306 mysql:latest
+podman run --name $containerName -e MYSQL_ROOT_PASSWORD=$password -d -p 5007:3306 mysql:latest
 
 # Wait for the MySQL server to initialize (add a sleep to ensure MySQL is ready)
 sleep 20  # Adjust the time if necessary, depending on how long the container takes to initialize
