@@ -51,8 +51,8 @@ def renderFrontpage():
     pg += "<h3>Choose ingredients to add or remove:</h3>"
     for ingredient in all_ingredients:
         pg += f"<label>{ingredient}</label><br>"
-        pg += f"<input type='radio' name='{ingredient}_action' value='add'> Add "
-        pg += f"<input type='radio' name='{ingredient}_action' value='remove'> Remove<br></br>"
+        pg += f"<input type='radio' name='add_ingredient' value='{ingredient}'> Add "
+        pg += f"<input type='radio' name='remove_ingredient' value='{ingredient}'> Remove<br></br>"
 
     pg += "<input type='submit' value='Submit'>"
     # pg += f"<button type='button' onClick''>forwarding test</button>"
@@ -61,11 +61,12 @@ def renderFrontpage():
 
     if request.args.get('burgers', '0') == '0':
         pg += "<strong>Please choose a burger.</strong>"
-    else:
+    """ else:
+        print("2")
         burger_name = request.args.get('burgers')
         add_ingredients = request.args.getlist('add_ingredients')
         remove_ingredients = request.args.getlist('remove_ingredients')
-        sendToKitchen(burger_name, add_ingredients, remove_ingredients)
+        buy2(burger_name, add_ingredients, remove_ingredients) """
     return pg
 
 
@@ -84,10 +85,9 @@ def frontpage():
     return renderFrontpage()
 
 
-
 @app.route('/burgers2', methods=['get'])
 def buy2():
-    return getBurgers()
+    return buy(request.args.get('burgers'), request.args.getlist('add_ingredient'), request.args.getlist('remove_ingredient'))
 
 
 # baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
@@ -124,9 +124,10 @@ def sendToKitchen(burgerName, add_ingredients=None, remove_ingredients=None):
 
 
 @app.route('/buy/<burgerName>', methods=['get'])
-def buy(burgerName):
-    add_ingredients = request.args.getlist('add')
-    remove_ingredients = request.args.getlist('remove')
+def buy(burgerName, add_ingredients=None, remove_ingredients=None):
+    """ add_ingredients = request.args.getlist('add')
+    remove_ingredients = request.args.getlist('remove') """
+
     print(
         f'Placing an order on {burgerName} with additions: {add_ingredients} and removals: {remove_ingredients}')
     sendToKitchen(burgerName, add_ingredients, remove_ingredients)
