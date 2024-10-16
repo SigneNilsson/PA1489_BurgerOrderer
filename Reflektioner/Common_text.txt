@@ -4,6 +4,7 @@ Uppgift 1: Samarbete och Konfigurationshantering
 Plan: Använda github och använda branches.
 
 Skapat en maintenance branch för uppdateringar. Hålla main felfri. Mergea maintenance till main när något fungerar felfritt.
+Har försökt dela upp men arbetar ofta med samma fil ändå när det uppstår problem.
 
 Uppgift 2: Implementation och Dokumentation
 Plan:
