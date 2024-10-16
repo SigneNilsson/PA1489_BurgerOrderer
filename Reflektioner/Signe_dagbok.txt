@@ -74,3 +74,8 @@ is not working the way we want to.
 
 I'm also realizing we have no automated tests as we should have. We've been talking about pytest to make some automated test, but at the moment it's hard to know how to use it on our project. We have installed pytest to try it out. I will read about automated tests
 today hoping to gain some clarity.
+___
+Today I started out by creating tables in the menu_store and added ingredients in a way that I think will be easy to retrieve from python. I decided to make a table for all burgers (menu_items) and 
+containing only the name of the different burgers. I also created a table with all ingredients (ingredients) and a table with the name of each burger and the ingredients of the burger in a comma separated string.
+
+A problem is how to connect to the database to burgerorderer using python. I found the MySQL Connector module that I think will be useful and added a file with a function connecting to the database.
