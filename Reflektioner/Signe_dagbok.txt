@@ -78,4 +78,7 @@ ___
 Today I started out by creating tables in the menu_store and added ingredients in a way that I think will be easy to retrieve from python. I decided to make a table for all burgers (menu_items) and 
 containing only the name of the different burgers. I also created a table with all ingredients (ingredients) and a table with the name of each burger and the ingredients of the burger in a comma separated string.
 
-A problem is how to connect to the database to burgerorderer using python. I found the MySQL Connector module that I think will be useful and added a file with a function connecting to the database.
+A problem is how to connect to the database to burgerorderer using python. I found the MySQL Connector module that I think will be useful and added a file with a function connecting to the database. I had to install the
+module using pip install mysql-connector-python.
+
+
