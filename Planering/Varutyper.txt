@@ -1,0 +1,12 @@
+Lista över varutyper
+
+Vi vill ha följande items på menyn:
+
+name: Mostafaburger
+med ingredienser: ingredients: "Bread", "Plantbeef", "Sauce", "Onion", "Salad", "Tomato", "Cucumber"
+
+name: Signeburger
+ingredients: "Bread", "Halloumi", "Sauce", "Onion", "Salad", "Avocado"
+
+name: Eidamburger
+ingredients: "Bread", "Beef", "Cheddar", "Pickles", "Ranch mayo", "Portabello mushroom"
