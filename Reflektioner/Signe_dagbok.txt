@@ -80,5 +80,16 @@ containing only the name of the different burgers. I also created a table with a
 
 A problem is how to connect to the database to burgerorderer using python. I found the MySQL Connector module that I think will be useful and added a file with a function connecting to the database. I had to install the
 module using pip install mysql-connector-python.
+___
+Today when I tried running the code in the script create_database.sh I got an error saying something was wrong. It was an error in menuStore.sql. I tried running the script menuStore in mysql to see if it worked and realized that there were no data in my tables. 
+All three tables were created but with no data, the INSERT bit had not worked. I looked through the code and realized it was a bunch of semicolons that was missing. As Python is the language I've used the most, I guess that will happen..
+I also got an error because I used the wrong datatype when creating a table. I tried to insert a string but it was set to be an integer when the table was created. With that changed, everything is working when it comes to creating the database with actual data in it.
 
+We have been researching testing today and preparing for debugging tomorrow. I've tried the debugger in vscode in the app.py in burger_orderer using breakpoints and step over and step into, but have yet to document it. I also made a first attempt 
+at making an automated test using pytest. I made a simple test just to try it out. I tested if length of the burger variable was three(that we have three burgers on the menu) and it, of course(as we have three burgers), passed. It was mostly to try how pytest works. Hopefully we can 
+make a more useful test tomorrow.
 
+We still have no actual use for the database in our burger_orderer app, since we're still using a temporary list in the app file. A goal is to retrieve the information of the burgers from the database instead. Something I've never done before. 
+When I searched for connecting to mysql database with python I found the mysql connector module. I've tried making the connection with menu_store in the new connect_to_database.py file but It does not work. 
+I think it's the port or host that's not right as I don't fully understand which port the connection is referring to. I've tried using different ports but as I have to change port in the create_database.sh script everytime I rerun it
+it's been hard to test.
