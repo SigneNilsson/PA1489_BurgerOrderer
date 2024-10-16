@@ -25,3 +25,55 @@ sisab sammanfattningen /rapport
 
 choose your burger
 ingredients och add/remove valen
+
+vald av databas
+SQL-databaser,  relationsdatabaser, ett system som lagrar och organiserar data i tabeller med rader och kolumner, ungefär som ett kalkylblad1. De använder ett språk som heter Structured Query Language (SQL) för att hantera och fråga da
+
+
+
+test debugg
+
+
+installera pytest
+testar med test fil att köra test på en vald funktion
+fick följande felmeddelande:
+$ pytest
+bash: pytest: command not found
+
+
+
+tested db containers and got errors:
+error rewriting "C:\\Users\\mosta\\OneDrive\\Dokuments\\GitHub\\Grupptest\\Containers\\dB\\menuStore.sql" to be relative to "/": expected root directory to be an absolute path, got "/"mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR at line 1: Failed to open file '/tmp/menuStore.sql', error: 2
+
+
+
+
+
+
+$ python -m pytest test_buy2.py
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
+collected 0 items / 1 error
+
+=================================== ERRORS ====================================
+________________________ ERROR collecting test_buy2.py ________________________
+test_buy2.py:8: in <module>
+    @pytest.buy2
+E   AttributeError: module 'pytest' has no attribute 'buy2'
+=========================== short test summary info ===========================
+ERROR test_buy2.py - AttributeError: module 'pytest' has no attribute 'buy2'
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.53s ===============================
+
+
+
+
+$ python -m pytest app.py
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
+collected 0 items
+
+============================ no tests ran in 0.41s ============================

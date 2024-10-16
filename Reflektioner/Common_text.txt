@@ -1,4 +1,8 @@
 <<Sammanfatta och Reflektera>>
+Gruppen består av:
+S
+S
+E
 
 Uppgift 1: Samarbete och Konfigurationshantering
 Plan: Använda github och använda branches.
