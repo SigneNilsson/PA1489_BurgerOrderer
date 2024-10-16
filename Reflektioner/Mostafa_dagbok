@@ -48,6 +48,7 @@ ERROR at line 1: Failed to open file '/tmp/menuStore.sql', error: 2
 
 
 
+ python -m pytest test_buy2.py
 
 
 

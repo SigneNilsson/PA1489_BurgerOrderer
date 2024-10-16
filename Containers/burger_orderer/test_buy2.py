@@ -1,13 +1,37 @@
 import pytest
-from app import buy2
+from app import getBurgers
+import app
+# def buy():
+#     return getBurgers()
 
-def buy2():
-    return getBurgers()
 
-
-@pytest.buy2
-def buy2():
-    assert buy2(getBurgers)
+# @pytest.buy
+# def buy():
+#     assert buy(getBurgers)
     
     
+def getBurgers():
+     return staticBurgers
 
+    
+@pytest.getBurgers
+def getBurgers():
+    assert getBurgers() == "ok"
+    
+    
+    
+#     # burgers.py
+# def getBurgers(func):
+#     def wrapper(*args, **kwargs):
+#         # Gör något innan funktionen körs
+#         result = func(*args, **kwargs)
+#         # Gör något efter funktionen körs
+#         return result
+#     return wrapper
+
+# # test_buy2.py
+# from app import getBurgers
+
+# @getBurgers
+# def getBurgers():
+#     assert getBurgers() == "Burger bought"
