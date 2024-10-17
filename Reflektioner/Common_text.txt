@@ -33,3 +33,8 @@ försöka skriva automatiserade testet när det passar under tiden
 
 15/10 tried using pytest to make automated tests. We started by installing pytest using pip install and creating a simple test file to try it out. Unfortunately it does not seem to work at all initially. 
 Will come back with entry when it's working.
+
+
+
+
+#ta bort denna filen sen

@@ -1,18 +1,66 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-ingenjörsdagboken
-github
-=======
-ingenjörsdagboken
-github
->>>>>>> Stashed changes
-=======
-github
-git commit
-git fetch 
-git pull
->>>>>>> Stashed changes
-ejndejdn
+PA1489
+The Engineer's Diary
+
+Hello
+My name is Seyed Mostafa Mohseni and I am studying the course PA1489, Basic Software Development!
+The task is called Burgerorderer and I, together with others in a group (Submission group 6), will develop a program to order hamburgers!
+we must have two web clients, one to order and customize their order (BurgerOrder) and one for the kitchen that can see the order (KitchenView).
+Our team consists of three developers:
+Seyed Mostafa Mohseni,
+Signe Nilsson,
+Eidam Holgaard
+
+//
+
+At the first meeting, we decided on our development environment and got started with the configuration management system. we have been ordered to work with GIT so so therefore we have chosen to use a Github server for our project. for the choice of development environment we have agreed on VSC as everyone is familiar with it.
+
+we are different at programming and since we are taking a programming course about python right now, we decided to develop our program with python although we don't know how difficult or easy this will be later in task 2.
+
+we have different backgrounds with different abilities. I am quite a beginner but one of our group has some experience, which we are happy about but also a challenge for us who need to learn a lot of new things in a short time to be able to cope with the work with a decent result.
+
+we have created github account and tried to familiarize with github environment as configuration management tool. We have created our project and named it as, “PA1489_BurgerOrderer”.
+
+we have also installed other tools such as Git, Git terminal, Github Dekstop and Podmandekstop that make the work easier!
+After many attempts we finally managed to create a repository for the group, clone our project and link our account to the project and create some git history. We created files and the directories that we need to have, such as Reflections, Containers and planning.
+
+We also tested making our first commit by creating files. Under the planning directory, we have created a txt file with the name "product types" and then listed which burgers with which ingredients we should have!
+
+
+In order not to make it complicated and too big, we agreed on 3 burgers named after our names. then we each have a burger that we decided what should be included in the burger that the customer can choose from!
+
+My burger called "Mostafaburger" contains; bread, plant beef, sauce, onion, salad, tomato and cucumber.
+
+we have also created a text file in the reflections directory for documentation of the work, i.e. the engineer's diary!
+
+It should be mentioned that the group work must first be carried out in a separate branch called maintenance and then merge to the main branch when it is finished. And to avoid conflicts, we should not work simultaneously in the same file!
+
+despite all this, I feel that there is a lot of ambiguity and a bit of confusion as this is all new to me and I think it will take some time until I can get a good idea of ​​the task and the purpose of the task. I think I have to go through the task description several times!
+
+
+we have tried to familiarize ourselves with our github environment and practiced the various operations to work with Git. We have done commit, clone, fetch, push, pullrequest, merge , etc through the below git commands:
+
+
+git clone: ​​Clones an existing repository
+git status: Shows the status of the repository
+git add: Adds files to the staging area
+git commit: Saves changes to the repository with a message
+git fetch: fetches all new commits from the specified repository
+git push: Sends commits to our git server.
+git pull: Downloads and integrates changes from the server to local branches
+git branch: Shows all branches in the repository and creates a new branch.
+git checkout/switch: Switches to another branch
+git merge: Merges another branch with the current branch
+
+Challenges in this step for me are just remembering all the commands, being able to use them in the right way and in the right order when downloading new changes and uploading them.
+
+However, I use Github desktop sometimes which makes the work with commands much faster and easier to see the changes!
+
+
+
+
+
 
 
 använda databasen
