@@ -1,7 +1,7 @@
 """Automated tests"""
 
 import pytest
-from burger_orderer.app import *
+from ./burger_orderer import *
 
 def test_getBurgers():
     burgers = getBurgers()
