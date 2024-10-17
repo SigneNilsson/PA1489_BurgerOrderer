@@ -130,15 +130,15 @@ collected 0 items
 ex på manuella tester
 Genom att låtsas vara en kund testa jag att beställa en burgare, ta bort och lägga till i min beställning och jag fick
 
-på burgerorder:
+i terminalen på burgerorder:
 127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /burgers2?burgers=Signeburger&remove_ingredient=Avocado&add_ingredient=Portabello+mushroom HTTP/1.1" 200 -
 Placing an order on Mostafaburger with additions: ['Portabello mushroom'] and removals: []
 
-på KitchenView:
+i terminalen på KitchenView:
 
 Loading front page
 127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /buy/Signeburger?add=Portabello%20mushroom&remove=Avocado HTTP/1.1" 200 -
 
 
-
+Fick följande utskrifts på webbsidan:
 Ordered Signeburger with added ingredients: Portabello mushroom and without: Avocado
