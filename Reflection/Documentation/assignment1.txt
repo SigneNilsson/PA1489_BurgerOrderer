@@ -23,7 +23,7 @@ Configuration management makes it possible to track all changes made to the syst
 
 -Brief summary about the most common workflow with git, including those
 git commands used;
-the most common workflow with git starts with cloning a repository, creating a new branch, creating files, making changes, saving the changes, adding the changes, commiting the changes and sending the changes, downloading and uploading them and merging with the current branch.
+The most common workflow with git starts with cloning a repository, creating a new branch, creating files, making changes, saving the changes, adding the changes, commiting the changes and sending the changes, downloading and uploading them and merging with the current branch.
 
 git clone      - repository
 git switch     - new branch
@@ -42,7 +42,7 @@ git pull       - pulls others changes
 Mostafa= It was easy to create the github account, repository and create files.
 
 -What went less well?
-Mostafa= It was a bit difficult to clone the repository, create a pull request and merge to the branch
+Mostafa= It was a bit difficult to clone the repository, create a pull request and merge to the branch.
 
 
 -How did you solve the difficulties? Could you have done differently?

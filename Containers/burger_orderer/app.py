@@ -1,8 +1,6 @@
-from flask import Flask, request, redirect
-from connecto_to_database import connect_to_db
+from flask import Flask, request, jsonify
 import os
 import requests
-
 
 app = Flask(__name__)
 
@@ -23,18 +21,6 @@ staticBurgers = [
 
 
 def getBurgers():
-    """returns the burgers. At the moment the burger data is retrieved using the dictionary static_burgers. The plan is to incorporate the connection to
-    the database and retrieve the data from the database instead"""
-    """ try: 
-        sql = connect_to_db()
-        sql = sql.cursor()
-        sql.execute('SELECT * FROM menu_item')
-        return_val = sql.fetchall()
-        print(return_val)
-        sql.close()
-        
-    except Exception as err:
-        print(err) """
     return staticBurgers
 
 
@@ -144,4 +130,4 @@ def buy(burgerName, add_ingredients=None, remove_ingredients=None):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=8000)
+    app.run(debug=True, host="0.0.0.0", port=8080)

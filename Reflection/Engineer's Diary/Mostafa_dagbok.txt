@@ -133,16 +133,14 @@ I've been sitting with FrontPage and getting together a better set of functions 
 
 
 
+now looking at task 3 we realize that we have run various manual tests but not an automated test. I searched for some information and found "pytest" which is quite a popular python testing framework used to run tests. It was very easy to install it using the pip install pytest command. All we need is that we have installed pytest, a test file and selected function or module to run the test.
 
+I created a test file and tested the "getBurger" function by running the command, pytest test_buy2.py. The test failed with the following error message:
 
+"bash: pytest: command not found"
 
+I tried different ways and tried to understand the error message. I got help from the teacher Andreas who has the python course and ran pytest -m test_buy2.py this time instead. Then I used the Python interpreter's module manager to run pytest, to ensure that Pytest runs within the current Python environment. I then received the following message:
 
-
-$ python -m pytest test_buy2.py
-============================= test session starts =============================
-platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
-rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
-collected 0 items / 1 error
 
 =================================== ERRORS ====================================
 ________________________ ERROR collecting test_buy2.py ________________________
@@ -154,58 +152,48 @@ ERROR test_buy2.py - AttributeError: module 'pytest' has no attribute 'buy2'
 !!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
 ============================== 1 error in 0.53s ===============================
 
+after I changed my test function and made sure I have the right module in my code, the test went through and by mistake I accidentally closed the terminal and then lost the printout.
 
 
 
-$ python -m pytest app.py
-============================= test session starts =============================
-platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
-rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
-collected 0 items
 
-============================ no tests ran in 0.41s ============================
+I noticed that we are missing the "Makefile script" so I got it from mMikael's example. The Makefile script is used to manage our applications as containerized using Podman, which is a container management tool like Docker!
 
-ex på manuella tester
-Genom att låtsas vara en kund testa jag att beställa en burgare, ta bort och lägga till i min beställning och jag fick
+//
 
-i terminalen på burgerorder:
+
+In addition to our manual tests in VSC from time to time, we have tested being a customer and ordered different burgers, removed and added to the order. Also tried to test two burgers at the same time or add/remove several things at the same time which did not work because we have decided that you can only select one burger at a time and can only lighten one ingredient remove one at a time. Below are printouts from the terminal:
+
+in the terminal for burger orders:
+
 127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /burgers2?burgers=Signeburger&remove_ingredient=Avocado&add_ingredient=Portabello+mushroom HTTP/1.1" 200 -
 Placing an order on Mostafaburger with additions: ['Portabello mushroom'] and removals: []
 
-i terminalen på KitchenView:
-
+in the terminal on KitchenView:
 Loading front page
 127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /buy/Signeburger?add=Portabello%20mushroom&remove=Avocado HTTP/1.1" 200 -
 
 
-Fick följande utskrifts på webbsidan:
-Ordered Signeburger with added ingredients: Portabello mushroom and without: Avocado
+
+Got the following printed on the web page:
+"Ordered Signeburger with added ingredients: Portabello mushroom and without: Avocado"
+
+//
 
 
 
+When I was going to run the program today, I got the following error in the terminal:
 
+Traceback (most recent call last):
+  File "C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer\app.py", line 2, in <module>
+    from connecto_to_database import connect_to_db
+  File "C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer\connecto_to_database.py", line 2, in <module>
+    import mysql.connector
+ModuleNotFoundError: No module named 'mysql'
 
+I got this error because the required module was not installed in my Python environment, so I used the command, pip install mysql-connector-python, to install it!
+installation went well:
 
-
-
-
-
-
-När jag skulle köra programmet 
-$ python -m pytest test_functions.py
-ImportError while loading conftest 'C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\tests\conftest.py'.
-conftest.py:2: in <module>
-    from burger_orderer.app import *
-E   ModuleNotFoundError: No module named 'burger_orderer'
-
-
-
-
-
-
-
-
-$ pip install mysql-connector-python
 Collecting mysql-connector-python
   Downloading mysql_connector_python-9.1.0-cp311-cp311-win_amd64.whl.metadata (6.2 kB)
 Downloading mysql_connector_python-9.1.0-cp311-cp311-win_amd64.whl (16.1 MB)
@@ -214,33 +202,33 @@ Installing collected packages: mysql-connector-python
 Successfully installed mysql-connector-python-9.1.0
 
 
+//
 
 
 
 
+There are always challenges when it comes to a group project and collaboration with others. We have different abilities and work in different ways and try to contribute to the work as much as we can. For example, 
+we haven't been able to continue our physical meetings lately with full strength as one of us has been sick but still tried to work from home and contribute to the work. 
+In the beginning, we were not as good at planning and communication as we are right now, which has become experience for all of us and developed us as a team.
+
+
+Unfortunately, so far we have not been able to get a connection to the database, but we are working on it! our containers are also under development!
 
 
 
+The command, pip install podman-compose, tries to install Podman Compose, a tool that allows you to run docke-ompose.yml files with Podman instead of Docker. Podman is a container engine that works without a daemon. With podman you can run containers without root privileges. podman compose helps manage multiple containers and their dependencies, which is especially useful for development and testing.
+installation went without any problems:
 
+  "Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed podman-compose-1.2.0 python-dotenv-1.0.1 pyyaml-6.0.2"
 
-$ pip install podman-compose
-
-
-  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
-Successfully installed podman-compose-1.2.0 python-dotenv-1.0.1 pyyaml-6.0.2
-
-
- podman compose -f burger_orderer.yaml up --build
-
-
->>>> Executing external compose provider "C:\\Users\\mosta\\AppData\\Local\\Microsoft\\WindowsApps\\docker-compose.exe". Please see podman-compose(1) for how to disable this message. <<<<
+After this, I ran the command, podman compose -f burger_orderer.yaml up --build, to start and build a set of the containerized services in the burger_orderer.yaml file with Podman. But then I got this error message:
 
 validating C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\burger_orderer.yaml: services.burgerorderer Additional property kitchenview is not allowed
 Error: executing C:\Users\mosta\AppData\Local\Microsoft\WindowsApps\docker-compose.exe -f burger_orderer.yaml up --build: exit status 15
 
 
-
-fick hjälp av Mikael och redigerade burger_orderer.yaml filen och körde kommandot igen och fick följande:
+I got help from Mikael and edited the burger_orderer.yaml file and ran the command again and got the following:
 
 [+] Running 1/5
  ✔ Network grupptest_default            Created                                                                                                                                                       0.0s
@@ -251,7 +239,10 @@ fick hjälp av Mikael och redigerade burger_orderer.yaml filen och körde komman
 Error response from daemon: container create: statfs /mnt/c/Users/mosta/OneDrive/Dokuments/GitHub/Grupptest/Containers/kitchenview: no such file or directory
 Error: executing C:\Users\mosta\AppData\Local\Microsoft\WindowsApps\docker-compose.exe -f burger_orderer.yaml up --build: exit status 1
 
-jag testde att göra kommande två gången till och efter mina försök så fick jag följande:
+
+
+Tried running commands two more times and after my attempts I got the following:
+
 
 [+] Running 0/2
  - Container grupptest-burgerorderer-1  Creating                                                                                                                                                      0.1s
@@ -260,5 +251,156 @@ Error response from daemon: container create: statfs /mnt/c/Users/mosta/OneDrive
 Error: executing C:\Users\mosta\AppData\Local\Microsoft\WindowsApps\docker-compose.exe -f burger_orderer.yaml up --build: exit status 1
 
 
+//
 
 
+I got a message from Signe that she finally understands the point of the docker-compose file as it turned out that it is easier to build the containers about the docker-compose file.
+she has now created docker-compose.yaml and committed it.
+
+Now I just tested to see what happens if I build the container with podman anyway. I got this now when I run command, $ podman compose -f docker-compose.yaml up:
+
+
+>>>> Executing external compose provider "C:\\Users\\mosta\\AppData\\Local\\Microsoft\\WindowsApps\\docker-compose.exe". Please see podman-compose(1) for how to disable this message. <<<<
+
+[+] Running 5/5
+ ✔ Network grupptest_burgernetwork      Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-burgerorderer-1  Created                                                                                                                                                       0.2s
+ ✔ Container grupptest-kitchenview-1    Created                                                                                                                                                       0.3s
+ ✔ Container grupptest-menustore-1      Recreated                                                                                                                                                     0.4s
+ ✔ Container grupptest-adminer-1        Running                                                                                                                                                       0.0s
+Attaching to adminer-1, burgerorderer-1, kitchenview-1, menustore-1
+menustore-1      | 2024-10-17 20:28:31+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+menustore-1      | 2024-10-17 20:28:31+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+menustore-1      | 2024-10-17 20:28:31+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+menustore-1      | 2024-10-17 20:28:31+00:00 [Note] [Entrypoint]: Initializing database files
+menustore-1      | 2024-10-17T20:28:31.707046Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+menustore-1      | 2024-10-17T20:28:31.708269Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 9.0.1) initializing of server in progress as process 75
+off the --initialize-insecure option.
+menustore-1      | 2024-10-17T20:28:39.945848Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
+menustore-1      | 2024-10-17 20:28:40+00:00 [Note] [Entrypoint]: Database files initialized
+menustore-1      | 2024-10-17 20:28:40+00:00 [Note] [Entrypoint]: Starting temporary server
+menustore-1      | 2024-10-17T20:28:40.083204Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+menustore-1      | 2024-10-17T20:28:40.292748Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.0.1) starting as process 126
+menustore-1      | 2024-10-17T20:28:40.311905Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+menustore-1      | 2024-10-17T20:28:41.176675Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+menustore-1      | 2024-10-17T20:28:41.940861Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+menustore-1      | 2024-10-17T20:28:41.940941Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+menustore-1      | 2024-10-17T20:28:41.951354Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+..................
+
+
+
+
+Run the command once more and get the following:
+
+
+
+
+
+
+$ podman compose -f docker-compose.yaml up
+>>>> Executing external compose provider "C:\\Users\\mosta\\AppData\\Local\\Microsoft\\WindowsApps\\docker-compose.exe". Please see podman-compose(1) for how to disable this message. <<<<
+
+[+] Running 4/0
+ ✔ Container grupptest-burgerorderer-1  Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-menustore-1      Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-kitchenview-1    Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-adminer-1        Created                                                                                                                                                       0.0s
+Attaching to adminer-1, burgerorderer-1, kitchenview-1, menustore-1
+menustore-1      | 2024-10-17 20:31:13+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+adminer-1        | [Thu Oct 17 20:31:13 2024] PHP 7.4.33 Development Server (http://[::]:8080) started
+menustore-1      | 2024-10-17 20:31:13+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+menustore-1      | 2024-10-17 20:31:13+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+menustore-1      | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+menustore-1      | 2024-10-17T20:31:14.031704Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+menustore-1      | 2024-10-17T20:31:14.378069Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.0.1) starting as process 1
+menustore-1      | 2024-10-17T20:31:14.390278Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+kitchenview-1    |  * Serving Flask app 'app'
+kitchenview-1    |  * Debug mode: on
+burgerorderer-1  | Traceback (most recent call last):
+burgerorderer-1  |   File "app.py", line 2, in <module>
+burgerorderer-1  |     from connecto_to_database import connect_to_db
+burgerorderer-1  |   File "/app/connecto_to_database.py", line 2, in <module>
+burgerorderer-1  |     import mysql.connector
+burgerorderer-1  | ModuleNotFoundError: No module named 'mysql'
+kitchenview-1    | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+kitchenview-1    |  * Running on all addresses (0.0.0.0)
+kitchenview-1    |  * Running on http://127.0.0.1:5000
+kitchenview-1    |  * Running on http://10.89.0.12:5000
+kitchenview-1    | Press CTRL+C to quit
+kitchenview-1    |  * Restarting with stat
+kitchenview-1    |  * Debugger is active!
+kitchenview-1    |  * Debugger PIN: 122-816-159
+menustore-1      | 2024-10-17T20:31:15.125847Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+burgerorderer-1 exited with code 1
+menustore-1      | 2024-10-17T20:31:15.699504Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+menustore-1      | 2024-10-17T20:31:15.699548Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+menustore-1      | 2024-10-17T20:31:15.709089Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+menustore-1      | 2024-10-17T20:31:15.787364Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+menustore-1      | 2024-10-17T20:31:15.787490Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '9.0.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+adminer-1        | [Thu Oct 17 20:32:58 2024] [::ffff:10.89.0.1]:42286 Accepted
+
+
+
+
+
+
+
+now I try run command "docker-compose up" and get the follow result:
+
+
+[+] Running 4/4
+ ✔ Container grupptest-adminer-1        Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-kitchenview-1    Recreated                                                                                                                                                     0.3s
+ ✔ Container grupptest-burgerorderer-1  Recreated                                                                                                                                                     0.4s
+ ✔ Container grupptest-menustore-1      Created                                                                                                                                                       0.0s
+Attaching to adminer-1, burgerorderer-1, kitchenview-1, menustore-1
+menustore-1      | 2024-10-17 23:02:04+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+adminer-1        | [Thu Oct 17 23:02:04 2024] PHP 7.4.33 Development Server (http://[::]:8080) started
+kitchenview-1    |  * Serving Flask app 'app'
+kitchenview-1    |  * Debug mode: on
+menustore-1      | 2024-10-17 23:02:04+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+menustore-1      | 2024-10-17 23:02:04+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+kitchenview-1    | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+kitchenview-1    |  * Running on all addresses (0.0.0.0)
+kitchenview-1    |  * Running on http://127.0.0.1:5000
+kitchenview-1    |  * Running on http://10.89.0.15:5000
+kitchenview-1    | Press CTRL+C to quit
+kitchenview-1    |  * Restarting with stat
+burgerorderer-1  |  * Serving Flask app 'app'
+burgerorderer-1  |  * Debug mode: on
+burgerorderer-1  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+burgerorderer-1  |  * Running on all addresses (0.0.0.0)
+burgerorderer-1  |  * Running on http://127.0.0.1:8000
+burgerorderer-1  |  * Running on http://10.89.1.4:8000
+burgerorderer-1  | Press CTRL+C to quit
+burgerorderer-1  |  * Restarting with stat
+menustore-1      | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+kitchenview-1    |  * Debugger is active!
+kitchenview-1    |  * Debugger PIN: 799-226-451
+burgerorderer-1  |  * Debugger is active!
+burgerorderer-1  |  * Debugger PIN: 111-660-796
+menustore-1      | 2024-10-17T23:02:05.131126Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+menustore-1      | 2024-10-17T23:02:05.406782Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.0.1) starting as process 1
+
+
+
+//
+
+
+I create a test file in burgerorder and test the function "def addOptions()".
+I put myself in burger order in the terminal and run command python -m pytest buydef-test.py
+
+The test passed and I get the following output:
+
+
+
+$ python -m pytest buydef-test.py
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
+collected 1 item
+
+buydef-test.py .                                                         [100%]
+
+============================== 1 passed in 0.01s ==============================
