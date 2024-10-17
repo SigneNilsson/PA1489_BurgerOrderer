@@ -82,6 +82,7 @@ def frontpage():
 
 @app.route('/burgers2', methods=['get'])
 def buy2():
+    """Handles GET requests to /burgers2 and returns the result of a burger order."""
     return buy(request.args.get('burgers'), request.args.getlist('add_ingredient'), request.args.getlist('remove_ingredient'))
 
 
