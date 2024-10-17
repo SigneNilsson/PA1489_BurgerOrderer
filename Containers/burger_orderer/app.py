@@ -23,7 +23,7 @@ staticBurgers = [
 
 
 def getBurgers():
-    try: 
+    """ try: 
         sql = connect_to_db()
         sql = sql.cursor()
         sql.execute('SELECT * FROM menu_item')
@@ -32,7 +32,7 @@ def getBurgers():
         sql.close()
         
     except Exception as err:
-        print(err)
+        print(err) """
     return staticBurgers
 
 

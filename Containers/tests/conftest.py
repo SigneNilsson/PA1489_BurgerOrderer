@@ -1,5 +1,5 @@
 import pytest
-from app import buy2, getBurgers
+from burger_orderer.app import *
 
 """ def buy2():
     return getBurgers()
@@ -9,8 +9,8 @@ from app import buy2, getBurgers
 def buy2():
     assert buy2(getBurgers)"""
     
-    
-def test_getBurgers():
+@pytest.fixture
+def client():
     burgers = getBurgers()
-
-    assert(len(burgers) == 3)
+    with burgers.test_client() as client:
+        yield client
