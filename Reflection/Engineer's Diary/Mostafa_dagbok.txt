@@ -1,0 +1,264 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+PA1489
+The Engineer's Diary
+
+Hello
+My name is Seyed Mostafa Mohseni and I am studying the course PA1489, Basic Software Development!
+The task is called Burgerorderer and I, together with others in a group (Submission group 6), will develop a program to order hamburgers!
+we must have two web clients, one to order and customize their order (BurgerOrder) and one for the kitchen that can see the order (KitchenView).
+Our team consists of three developers:
+Seyed Mostafa Mohseni,
+Signe Nilsson,
+Eidam Holgaard
+
+//
+
+At the first meeting, we decided on our development environment and got started with the configuration management system. we have been ordered to work with GIT so so therefore we have chosen to use a Github server for our project. for the choice of development environment we have agreed on VSC as everyone is familiar with it.
+
+we are different at programming and since we are taking a programming course about python right now, we decided to develop our program with python although we don't know how difficult or easy this will be later in task 2.
+
+we have different backgrounds with different abilities. I am quite a beginner but one of our group has some experience, which we are happy about but also a challenge for us who need to learn a lot of new things in a short time to be able to cope with the work with a decent result.
+
+we have created github account and tried to familiarize with github environment as configuration management tool. We have created our project and named it as, “PA1489_BurgerOrderer”.
+
+we have also installed other tools such as Git, Git terminal, Github Dekstop and Podmandekstop that make the work easier!
+After many attempts we finally managed to create a repository for the group, clone our project and link our account to the project and create some git history. We created files and the directories that we need to have, such as Reflections, Containers and planning.
+
+We also tested making our first commit by creating files. Under the planning directory, we have created a txt file with the name "product types" and then listed which burgers with which ingredients we should have!
+
+
+In order not to make it complicated and too big, we agreed on 3 burgers named after our names. then we each have a burger that we decided what should be included in the burger that the customer can choose from!
+
+My burger called "Mostafaburger" contains; bread, plant beef, sauce, onion, salad, tomato and cucumber.
+
+we have also created a text file in the reflections directory for documentation of the work, i.e. the engineer's diary!
+
+It should be mentioned that the group work must first be carried out in a separate branch called maintenance and then merge to the main branch when it is finished. And to avoid conflicts, we should not work simultaneously in the same file!
+
+despite all this, I feel that there is a lot of ambiguity and a bit of confusion as this is all new to me and I think it will take some time until I can get a good idea of ​​the task and the purpose of the task. I think I have to go through the task description several times!
+
+
+we have tried to familiarize ourselves with our github environment and practiced the various operations to work with Git. We have done commit, clone, fetch, push, pullrequest, merge , etc through the below git commands:
+
+
+git clone: ​​Clones an existing repository
+git status: Shows the status of the repository
+git add: Adds files to the staging area
+git commit: Saves changes to the repository with a message
+git fetch: fetches all new commits from the specified repository
+git push: Sends commits to our git server.
+git pull: Downloads and integrates changes from the server to local branches
+git branch: Shows all branches in the repository and creates a new branch.
+git checkout/switch: Switches to another branch
+git merge: Merges another branch with the current branch
+
+Challenges in this step for me are just remembering all the commands, being able to use them in the right way and in the right order when downloading new changes and uploading them.
+
+However, I use Github desktop sometimes which makes the work with commands much faster and easier to see the changes!
+
+
+
+
+
+
+
+With the help of Mikael's sample project with the basics of BurgerOrderer in python that we download from, https://codeberg.org/mickesv/BO-py.git, we put together our structure and organization of files and codes. Because we use python, we use the Flask web framework, which is easy and flexible to use for building web applications.
+
+we went through the code and tried to understand the code and the functionality. we created all the necessary ones in the Containers directory.
+
+we tested creating Image and containers for burger order, kitchenview in podman.
+
+we have talked about burger order, kitchenview and databases and checked which files we need. we created files, changed code and changed the location of the files and got better at describing commit messages more clearly.
+
+//
+
+
+Now tried to test our hamburger orderer and put the burgers and their ingredients in a Dictionary in app.py under burgerorder.
+
+By updating our functions and html, we produced a simple page that displayed our burgers with their ingredients. By running commands python app.py under burger_order and port; localhost:8000 and we open our web page and can see the information we send to burger_order. With the same command, python app.py, but port;localhost:5000, we can see our kitchen view.
+
+We are thinking about how to set up for the customer so that they can adapt their order, add or remove from the order.
+
+Signe and I tried to understand what a REST API is. It is a way for different systems to exchange data efficiently. We use the most common method GET to retrieve data. We use URL, which is a web address to access resources on the internet.
+
+
+//
+
+we are working on and trying to understand more about the connection between burger order and kitchenview. But we have a lot to work with when it comes to the database, Menustore!
+
+we must have a database that contains information about each type of item.
+The choice of database became SQL databases which are relational databases, a system that stores and organizes data in tables with rows and columns, much like a spreadsheet. They use a language called Structured Query Language (SQL) to manage data! This is flexible that can handle large amounts of data!
+
+
+
+
+Right now I get connection errors when we try to do tests of our hamburger clients, but also a lot of errors when I run debugging in VSC.
+
+Partly it is because I am trying to start the project in burgerorder but not in kitchenview and partly it is because the GET method needs to be updated!
+
+I have developed and edited the front page so that you can first see our 3 burgers with its ingredients, can select a burger and remove or add ingredients. But when we click "submit" to see the order, nothing happens, we are investigating the problem!
+
+
+//
+
+we all try to get an idea of ​​working with containers to be able to run the program in.
+Advantages of containers are that it isolates the applications from each other and reduces the risk of conflicts, it is much easier to move the applications in the development environment.
+
+To build contaioners and image we have podman dekstop, we have created it through the app but it is not possible to run them now!
+
+
+
+we go through the task 2 description and make sure to have the Dockerfile for each container, we make sure that the corresponding package.json which is requirements.txt exists and there is relevant info in them!
+
+
+we need to make sure we have the database working and working conatiners for burger order and kitchenview.
+we have all done a little of each part and tried to work together to get the database, contaioners and the connection between buregrorder and kitchview together, however we have had a bit of bad luck with our group meetings that have been cancelled. This creates some worries and makes it difficult to know when we will be finished with projects, but we hope we can make up for it when we see each other next time.
+
+
+//
+
+we tried to work a little bit in each direction and are now meeting again to continue with the development of the project.
+
+we run the python app.py command in the terminal from time to time and test new changes we have implemented in burgerorder.
+
+Right now we can only choose burgers but we don't get orders.
+
+
+
+
+//
+
+I've been sitting with FrontPage and getting together a better set of functions and calls and html to make it easier for the customer to order their burger and customize their order.
+
+
+
+
+
+
+
+
+$ python -m pytest test_buy2.py
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
+collected 0 items / 1 error
+
+=================================== ERRORS ====================================
+________________________ ERROR collecting test_buy2.py ________________________
+test_buy2.py:8: in <module>
+    @pytest.buy2
+E   AttributeError: module 'pytest' has no attribute 'buy2'
+=========================== short test summary info ===========================
+ERROR test_buy2.py - AttributeError: module 'pytest' has no attribute 'buy2'
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.53s ===============================
+
+
+
+
+$ python -m pytest app.py
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
+collected 0 items
+
+============================ no tests ran in 0.41s ============================
+
+ex på manuella tester
+Genom att låtsas vara en kund testa jag att beställa en burgare, ta bort och lägga till i min beställning och jag fick
+
+i terminalen på burgerorder:
+127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /burgers2?burgers=Signeburger&remove_ingredient=Avocado&add_ingredient=Portabello+mushroom HTTP/1.1" 200 -
+Placing an order on Mostafaburger with additions: ['Portabello mushroom'] and removals: []
+
+i terminalen på KitchenView:
+
+Loading front page
+127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /buy/Signeburger?add=Portabello%20mushroom&remove=Avocado HTTP/1.1" 200 -
+
+
+Fick följande utskrifts på webbsidan:
+Ordered Signeburger with added ingredients: Portabello mushroom and without: Avocado
+
+
+
+
+
+
+
+
+
+
+
+När jag skulle köra programmet 
+$ python -m pytest test_functions.py
+ImportError while loading conftest 'C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\tests\conftest.py'.
+conftest.py:2: in <module>
+    from burger_orderer.app import *
+E   ModuleNotFoundError: No module named 'burger_orderer'
+
+
+
+
+
+
+
+
+$ pip install mysql-connector-python
+Collecting mysql-connector-python
+  Downloading mysql_connector_python-9.1.0-cp311-cp311-win_amd64.whl.metadata (6.2 kB)
+Downloading mysql_connector_python-9.1.0-cp311-cp311-win_amd64.whl (16.1 MB)
+   ---------------------------------------- 16.1/16.1 MB 4.0 MB/s eta 0:00:00
+Installing collected packages: mysql-connector-python
+Successfully installed mysql-connector-python-9.1.0
+
+
+
+
+
+
+
+
+
+
+
+$ pip install podman-compose
+
+
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed podman-compose-1.2.0 python-dotenv-1.0.1 pyyaml-6.0.2
+
+
+ podman compose -f burger_orderer.yaml up --build
+
+
+>>>> Executing external compose provider "C:\\Users\\mosta\\AppData\\Local\\Microsoft\\WindowsApps\\docker-compose.exe". Please see podman-compose(1) for how to disable this message. <<<<
+
+validating C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\burger_orderer.yaml: services.burgerorderer Additional property kitchenview is not allowed
+Error: executing C:\Users\mosta\AppData\Local\Microsoft\WindowsApps\docker-compose.exe -f burger_orderer.yaml up --build: exit status 15
+
+
+
+fick hjälp av Mikael och redigerade burger_orderer.yaml filen och körde kommandot igen och fick följande:
+
+[+] Running 1/5
+ ✔ Network grupptest_default            Created                                                                                                                                                       0.0s
+ - Container grupptest-menustore-1      Creating                                                                                                                                                      0.1s
+ - Container grupptest-kitchenview-1    Creating                                                                                                                                                      0.1s
+ - Container grupptest-burgerorderer-1  Creating                                                                                                                                                      0.1s
+ - Container grupptest-adminer-1        Creating                                                                                                                                                      0.1s
+Error response from daemon: container create: statfs /mnt/c/Users/mosta/OneDrive/Dokuments/GitHub/Grupptest/Containers/kitchenview: no such file or directory
+Error: executing C:\Users\mosta\AppData\Local\Microsoft\WindowsApps\docker-compose.exe -f burger_orderer.yaml up --build: exit status 1
+
+jag testde att göra kommande två gången till och efter mina försök så fick jag följande:
+
+[+] Running 0/2
+ - Container grupptest-burgerorderer-1  Creating                                                                                                                                                      0.1s
+ - Container grupptest-kitchenview-1    Creating                                                                                                                                                      0.1s
+Error response from daemon: container create: statfs /mnt/c/Users/mosta/OneDrive/Dokuments/GitHub/Grupptest/Containers/burgerorderer: no such file or directory
+Error: executing C:\Users\mosta\AppData\Local\Microsoft\WindowsApps\docker-compose.exe -f burger_orderer.yaml up --build: exit status 1
+
+
+
+
