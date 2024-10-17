@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-#import os
+import os
 import requests
 
 app = Flask(__name__)
@@ -85,8 +85,8 @@ def buy2():
     return buy(request.args.get('burgers'), request.args.getlist('add_ingredient'), request.args.getlist('remove_ingredient'))
 
 
-#baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
-baseURL = 'http://localhost:5000'
+baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
+
 
 
 def makeURL(burgerName):
