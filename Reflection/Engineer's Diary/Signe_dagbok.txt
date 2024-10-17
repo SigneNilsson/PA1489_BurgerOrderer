@@ -133,4 +133,48 @@ But first, it's time to make a debug session. I've thought about how to best deb
 and then debug it in smaller parts, using different inputs to see what happens with our variables.
 _____
 
+After speaking with Mikael it seems we are closer to building containers for kitchen view and burger orderer that we expected. We already have the dockerfile and just need to: 
+podman-compose -f burger_orderer.yaml build
+podman-compose -f burger_orderer.yaml up
+
+using the command podman ps -a shows there are two containers:(menuStore was already running)
+but burgerorderer is only created and will not run. 
+
+CONTAINER ID  IMAGE                           COMMAND     CREATED         STATUS          PORTS                   NAMES
+1ee69c091d2d  docker.io/library/mysql:latest  mysqld      3 hours ago     Up 3 hours ago  0.0.0.0:3308->3306/tcp  menuStore
+6aa68ca71667  localhost/burgerorderer:latest              11 minutes ago  Created         0.0.0.0:8000->8000/tcp  pa1489_burgerorderer_burgerorderer_1
+
+Realized the code starting the database with menuStore that I made earlier will be hard to use as it's not running in the same container as kitchen view and burger orderer. Mikael said it 
+would be hard to retrieve information from it as it is now. But at least I got a container working with a database, even if we can't use it..
+
+We updated the yaml file to contain the image of kitchen view, burger orderer and menuStore. We tried setting them up with Mikael and it did not work. As it is, I have no time fixing it and will probably have to 
+leave it as it is.
+
+A god thing is I feal comfortable using git now, given the many times I've commited lately.
+
+___
+Documentation of debugsession:
+Mikael told me it is ok to debug part of a script to show that I can use the debugger, so I will debug the first part of burger_orderer app.py as to see what happens with the variables, especially static_Burgers and ensure the
+burgers are retrieved correctly by the function getBurgers(). 
+
+I start by setting a breakpoint on line 20 where the function getBurgers() is. I use the python debugger in vscode. As to not make any changes in the app itself and still be able to change input to the function getBurgers I chose to put it in a module called app_functions. 
+As the code reaches the breakpoint I chose to step into the function getBurgers(). I can see in the variables that I have the variable Static Burgers containing the dictionary of the burgers and their ingredients. 
+I create two calls to the function to test it:
+
+Burgers = getBurgers()
+wrongBurgers = getBurgers("a")
+
+I'm sure the last one will bring an error, and I can use the error to create a try/except to stop the code from crashing if it was to be called in the wrong way. I step into the first call Burgers = getBurgers()
+and get the variable Burgers containing, as I knew, the same as the dictionary StaticBurgers.
+
+I step into the second functioncall wrongBurgers = getBurgers("a") and get a Type Error:
+
+Exception has occurred: TypeError
+getBurgers() takes 0 positional arguments but 1 was given
+  File "C:\Users\local admin\Software_Engineering_2024\PA1489_BurgerOrderer\Containers\burger_orderer\app_functions.py", line 35, in <module>
+    wrongBurgers = getBurgers("a")
+                   ^^^^^^^^^^^^^^^
+TypeError: getBurgers() takes 0 positional arguments but 1 was given
+
+As the function getBurgers() takes no argument, I figured this would happen. As I know this is a TypeError, I can now catch it with try/except as follows:
 
