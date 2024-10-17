@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-#import os
+import os
 import requests
 
 app = Flask(__name__)
@@ -82,11 +82,12 @@ def frontpage():
 
 @app.route('/burgers2', methods=['get'])
 def buy2():
+    """Handles GET requests to /burgers2 and returns the result of a burger order."""
     return buy(request.args.get('burgers'), request.args.getlist('add_ingredient'), request.args.getlist('remove_ingredient'))
 
 
-#baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
-baseURL = 'http://localhost:5000'
+baseURL='http://' + os.getenv('KITCHENVIEW_HOST', 'localhost:5000')
+
 
 
 def makeURL(burgerName):
