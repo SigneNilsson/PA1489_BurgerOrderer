@@ -48,7 +48,7 @@ def buy(burger_name):
     Takes an argument and prints an order confirmation for a hamburger.
     Lists all options.
     """
-     
+    
     pg = index()
     pg += 'One ' + burger_name + ' ordered with the following options:'
     add_ingredients = request.args.getlist('add')
@@ -63,7 +63,7 @@ def buy(burger_name):
         print('<br><strong>Removed ingredients:</strong><br>')
         for ingredient in remove_ingredients:
             print(' - ' + ingredient + '<br>')
-    
+    print(f"one {burger_name} ordered with the following options:")
     return pg 
 
 if __name__ == "__main__":

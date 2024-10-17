@@ -193,11 +193,12 @@ In the terminal where the kitchenview app is running you can see the following:
 
 Loading front page
 127.0.0.1 - - [17/Oct/2024 23:01:23] "GET /?url=http://localhost:5000/buy/Signeburger HTTP/1.1" 200 -
-when I follow the link, I see the message
+when I follow the link, I see the message.
 
 "One Signeburger ordered with the following options:"
 
-Alas, it is indeed working, but the page in kitchenview on localhost:5000 is not redirected the page with the placed order automatically.
+Alas, it is indeed working, but the page in kitchenview on localhost:5000 is not redirected the page with the placed order automatically. I think we need javascript for that,
+so we can settle on the easy way of printing the order in the kitchen view terminal instead.
 
 Documentation of debugsession#2:
 Mikael told me it is ok to debug part of a script to show that I can use the debugger, so if the last part was not enough I will do another debugsession, although it's really 

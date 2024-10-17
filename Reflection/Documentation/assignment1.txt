@@ -41,7 +41,6 @@ git pull       - pulls others changes
 -What went well?
 Mostafa= It was easy to create the github account, repository and create files.
 
-
 -What went less well?
 Mostafa= It was a bit difficult to clone the repository, create a pull request and merge to the branch
 
@@ -49,5 +48,6 @@ Mostafa= It was a bit difficult to clone the repository, create a pull request a
 -How did you solve the difficulties? Could you have done differently?
 Mostafa= We got help from each other and the exercises.
 
-
 -What did you not manage to solve? Why not
+We did not have any issues regarding configuration management that we could not solve. We decided on using a maintenance branch early on and stuck with it. 
+Merging only perfectly working code to main.
