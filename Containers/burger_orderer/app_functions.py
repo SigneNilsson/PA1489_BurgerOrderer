@@ -33,4 +33,8 @@ def getBurgers():
     return staticBurgers
 
 Burgers = getBurgers()
-wrongBurgers = getBurgers("a")
+try:
+    wrongBurgers = getBurgers("a")
+except TypeError
+    print("Not allowed")
+    
