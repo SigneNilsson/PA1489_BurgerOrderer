@@ -17,6 +17,9 @@ https://github.com/SigneNilsson/PA1489_BurgerOrderer.git
 
 -Brief summary of which functionality you have tested:
 
+
+
+
 -Brief summary of how you have completed the tests:
 
 
@@ -32,3 +35,18 @@ https://github.com/SigneNilsson/PA1489_BurgerOrderer.git
 • What went less well?
 • How did you solve the difficulties? Could you have done differently?
 • What did you not manage to solve? Why not?
+
+
+
+
+
+försöka skriva automatiserade testet när det passar under tiden
+-testa så att burger orderer fungerar med sida i localhost
+-testa så att kitchenview fugnerar med sida i localhost
+-testa submitknappen genom klicka och se om information skickas vidare.
+-testa databasuppkoppling
+-testa använda information från databas i utskrifter.
+
+
+15/10 tried using pytest to make automated tests. We started by installing pytest using pip install and creating a simple test file to try it out. Unfortunately it does not seem to work at all initially. 
+Will come back with entry when it's working.
