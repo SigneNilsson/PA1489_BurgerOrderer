@@ -1,5 +1,7 @@
+"""pytest """
+
 import pytest
-from burger_orderer.app import *
+from burger_orderer.app import getBurgers
 
 """ def buy2():
     return getBurgers()

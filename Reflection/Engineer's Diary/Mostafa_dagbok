@@ -142,3 +142,36 @@ Loading front page
 
 Fick följande utskrifts på webbsidan:
 Ordered Signeburger with added ingredients: Portabello mushroom and without: Avocado
+
+
+
+
+
+
+
+
+
+
+
+När jag skulle köra programmet 
+$ python -m pytest test_functions.py
+ImportError while loading conftest 'C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\tests\conftest.py'.
+conftest.py:2: in <module>
+    from burger_orderer.app import *
+E   ModuleNotFoundError: No module named 'burger_orderer'
+
+
+
+
+
+
+
+
+$ pip install mysql-connector-python
+Collecting mysql-connector-python
+  Downloading mysql_connector_python-9.1.0-cp311-cp311-win_amd64.whl.metadata (6.2 kB)
+Downloading mysql_connector_python-9.1.0-cp311-cp311-win_amd64.whl (16.1 MB)
+   ---------------------------------------- 16.1/16.1 MB 4.0 MB/s eta 0:00:00
+Installing collected packages: mysql-connector-python
+Successfully installed mysql-connector-python-9.1.0
+

@@ -1,9 +1,9 @@
 """Automated tests"""
 
-import pytest
-from burger_orderer.app import *
+#import pytest
+from app import getBurgers
 
 def test_getBurgers():
+    """  """
     burgers = getBurgers()
-
     assert(len(burgers) == 3)
