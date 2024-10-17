@@ -153,28 +153,15 @@ leave it as it is.
 A god thing is I feal comfortable using git now, given the many times I've commited lately.
 
 ___
-Documentation of debugsession:
-Mikael told me it is ok to debug part of a script to show that I can use the debugger, so I will debug the first part of burger_orderer app.py as to see what happens with the variables, especially static_Burgers and ensure the
-burgers are retrieved correctly by the function getBurgers(). 
+We have running containers for burger_orderer, kitchen_view and menu_store! I finally understand the meaning of the docker-compose file. Earlier when Mikael tried to build the containers, he said I 
+should try using docker instead of podman, so I installed it. I read that it is easier buildning the containers if the docker-compose file is actually called docker-compose, as you don't need the -f flag when running it. Earlier it was
+named burger_orderer.yaml, so I changed it.
 
-I start by setting a breakpoint on line 20 where the function getBurgers() is. I use the python debugger in vscode. As to not make any changes in the app itself and still be able to change input to the function getBurgers I chose to put it in a module called app_functions. 
-As the code reaches the breakpoint I chose to step into the function getBurgers(). I can see in the variables that I have the variable Static Burgers containing the dictionary of the burgers and their ingredients. 
-I create two calls to the function to test it:
+When trying to build the containers menustore started up but kitchen view and burger orderer didn't. The problem was that not all extern modules were included in the requirements.txt file. Another problem was that the container for
+adminer was running on the same port as the burger orderer app. After making these changes, and having some trouble restarting it several times because I did not delete the old containers at first, everything was created with docker-compose build,
+and now we have all containers running (docker-compose up)!
 
-Burgers = getBurgers()
-wrongBurgers = getBurgers("a")
+We also have access to the database using adminer on port 8080 in localhost. Mikael said it was useful when adding data to the database. I don't know if we'll have the time for it. The debuggsession is 
+more urgent as the assignment is due tomorrow.
 
-I'm sure the last one will bring an error, and I can use the error to create a try/except to stop the code from crashing if it was to be called in the wrong way. I step into the first call Burgers = getBurgers()
-and get the variable Burgers containing, as I knew, the same as the dictionary StaticBurgers.
-
-I step into the second functioncall wrongBurgers = getBurgers("a") and get a Type Error:
-
-Exception has occurred: TypeError
-getBurgers() takes 0 positional arguments but 1 was given
-  File "C:\Users\local admin\Software_Engineering_2024\PA1489_BurgerOrderer\Containers\burger_orderer\app_functions.py", line 35, in <module>
-    wrongBurgers = getBurgers("a")
-                   ^^^^^^^^^^^^^^^
-TypeError: getBurgers() takes 0 positional arguments but 1 was given
-
-As the function getBurgers() takes no argument, I figured this would happen. As I know this is a TypeError, I can now catch it with try/except as follows:
-
+We also have the problem that sometimes you get redirected to an errormessage when buying burgers in menustore. Time will tell what we will manage to solve in time.
