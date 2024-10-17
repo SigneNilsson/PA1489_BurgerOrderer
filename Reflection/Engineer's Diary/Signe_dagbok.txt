@@ -147,4 +147,7 @@ CONTAINER ID  IMAGE                           COMMAND     CREATED         STATUS
 Realized the code starting the database with menuStore that I made earlier will be hard to use as it's not running in the same container as kitchen view and burger orderer. Mikael said it 
 would be hard to retrieve information from it as it is now. But at least I got a container working with a database, even if we can't use it..
 
-Also a god thing is I fell comfortable using git now, given the many times I've commited lately.
+We updated the yaml file to contain the image of kitchen view, burger orderer and menuStore. We tried setting them up with Mikael and it did not work. As it is, I have no time fixing it and will probably have to 
+leave it as it is.
+
+A god thing is I feal comfortable using git now, given the many times I've commited lately.
