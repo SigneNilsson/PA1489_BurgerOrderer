@@ -23,6 +23,8 @@ staticBurgers = [
 
 
 def getBurgers():
+    """returns the burgers. At the moment the burger data is retrieved using the dictionary static_burgers. The plan is to incorporate the connection to
+    the database and retrieve the data from the database instead"""
     """ try: 
         sql = connect_to_db()
         sql = sql.cursor()
