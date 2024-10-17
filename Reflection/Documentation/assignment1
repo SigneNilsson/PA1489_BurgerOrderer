@@ -23,15 +23,17 @@ Configuration management makes it possible to track all changes made to the syst
 
 -Brief summary about the most common workflow with git, including those
 git commands used;
-the most common workflow with git starts with cloning a repository, creating a new branch, creating files, making changes, saving the changes, sending changes, downloading and uploading them and merging with the current branch.
+the most common workflow with git starts with cloning a repository, creating a new branch, creating files, making changes, saving the changes, adding the changes, commiting the changes and sending the changes, downloading and uploading them and merging with the current branch.
 
-git clone -repository
-git switch -new branch
-git add -new file
-git commit -saves the changes
-git fetch - fetches the changes
-git push - sends the changes
-git merge -merge branches
+git clone      - repository
+git switch     - new branch
+git branch     - checks current branch
+git add        - new file
+git commit     - saves made changes
+git fetch      - fetches others changes
+git push       - sends your changes
+git merge      - merge branches
+git pull       - pulls others changes 
 
 
 -Experience working with configuration management:
