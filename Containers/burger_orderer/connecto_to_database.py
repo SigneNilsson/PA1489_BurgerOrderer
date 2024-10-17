@@ -6,6 +6,7 @@ conn = connect(
     user = 'root',
     password = 'bestgroupever',
     host = 'localhost',
+    port = 3308,
     database = 'menu_store')
 
 print('A connection object has been created.')
