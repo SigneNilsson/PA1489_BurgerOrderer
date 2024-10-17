@@ -133,4 +133,18 @@ But first, it's time to make a debug session. I've thought about how to best deb
 and then debug it in smaller parts, using different inputs to see what happens with our variables.
 _____
 
+After speaking with Mikael it seems we are closer to building containers for kitchen view and burger orderer that we expected. We already have the dockerfile and just need to: 
+podman-compose -f burger_orderer.yaml build
+podman-compose -f burger_orderer.yaml up
 
+using the command podman ps -a shows there are two containers:(menuStore was already running)
+but burgerorderer is only created and will not run. 
+
+CONTAINER ID  IMAGE                           COMMAND     CREATED         STATUS          PORTS                   NAMES
+1ee69c091d2d  docker.io/library/mysql:latest  mysqld      3 hours ago     Up 3 hours ago  0.0.0.0:3308->3306/tcp  menuStore
+6aa68ca71667  localhost/burgerorderer:latest              11 minutes ago  Created         0.0.0.0:8000->8000/tcp  pa1489_burgerorderer_burgerorderer_1
+
+Realized the code starting the database with menuStore that I made earlier will be hard to use as it's not running in the same container as kitchen view and burger orderer. Mikael said it 
+would be hard to retrieve information from it as it is now. But at least I got a container working with a database, even if we can't use it..
+
+Also a god thing is I fell comfortable using git now, given the many times I've commited lately.
