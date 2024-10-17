@@ -1,6 +1,8 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, redirect
+from connecto_to_database import connect_to_db
 import os
 import requests
+
 
 app = Flask(__name__)
 
@@ -21,6 +23,16 @@ staticBurgers = [
 
 
 def getBurgers():
+    try: 
+        sql = connect_to_db()
+        sql = sql.cursor()
+        sql.execute('SELECT * FROM menu_item')
+        return_val = sql.fetchall()
+        print(return_val)
+        sql.close()
+        
+    except Exception as err:
+        print(err)
     return staticBurgers
 
 
