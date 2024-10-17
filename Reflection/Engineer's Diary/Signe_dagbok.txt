@@ -234,3 +234,7 @@ except TypeError
 
 But that wouldn't be necessary as the function is never called with arguments in our code. But would maybe be needed if getBurgers() was used again in another script.
 
+Förbättringsmöjligheter:
+-hämta data från databasen
+-redirect i kitchenview när order lagts så att den syns
+-lägga till/ta bort flera ingredienser.
