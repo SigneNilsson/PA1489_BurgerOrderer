@@ -15,7 +15,9 @@ https://github.com/SigneNilsson/PA1489_BurgerOrderer.git
 
 -Brief summary of what you have implemented:
 
-
+We have decided our product types, development environment, use Flask we have updated burger_order , kitchenview and menustore, created containers, installed necessary tools for the program.
+chosen language and other technologies to be used. started to get kitcehnview and burger orders up and running without a database
+got database up and running, got database working in container and got kitchenview and burger orders working in container.
 
 
 what you did and how you thought about it:
@@ -46,12 +48,3 @@ what you did and how you thought about it:
 
 
 
-
--välja språk och andra tekniker som ska användas.
--börja få igång kitcehnview och burger orderer utan databas
--få igång databas
--få databas att fungera i container
--få kitchenview och burgerorderer att fungera i container.
-
--- Valde språk python och podman som container. Använder github för konfigurationshantering.
---Använde mikaels git repository för att sätta upp enkel version av burger orderer och kitchenview.
