@@ -8,6 +8,8 @@ services:
       - ./Containers/burgerorderer:/app
     environment:
       KITCHENVIEW_HOST: "kitchenview:5000"
+    networks:
+    - burgernetwork
     
     kitchenview:
       image: kitchenview
@@ -28,3 +30,7 @@ services:
       restart: always
       ports:
       - 8080:8080
+
+networks:
+  burgernetwork:
+    driver: bridge
