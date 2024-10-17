@@ -93,3 +93,44 @@ We still have no actual use for the database in our burger_orderer app, since we
 When I searched for connecting to mysql database with python I found the mysql connector module. I've tried making the connection with menu_store in the new connect_to_database.py file but It does not work. 
 I think it's the port or host that's not right as I don't fully understand which port the connection is referring to. I've tried using different ports but as I have to change port in the create_database.sh script everytime I rerun it
 it's been hard to test.
+___
+
+When I try running the connect_to_database.sh script, the following error is shown:
+
+Exception has occurred: InterfaceError
+2003: Can't connect to MySQL server on 'localhost:3306' (Errno 10061: Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det)
+ConnectionRefusedError: [WinError 10061] Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det
+
+The above exception was the direct cause of the following exception:
+
+  File "C:\Users\local admin\Software_Engineering_2024\PA1489_BurgerOrderer\Containers\burger_orderer\connecto_to_database.py", line 5, in <module>
+    conn = connect(
+           ^^^^^^^^
+mysql.connector.errors.InterfaceError: 2003: Can't connect to MySQL server on 'localhost:3306' (Errno 10061: Det gick inte att göra en anslutning eftersom måldatorn aktivt nekade det), 
+
+
+I changed to wsl from windows and it worked. I can't get the container to show up in podman desktop but using podman ps I can see I have a container up and running. Success! Now the problem is that I can't connect 
+to it using python. We want to connect to the database in burgerorderer. I got the following error when running connecto_to_database.py:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/local admin/Software_Engineering_2024/PA1489_BurgerOrderer/Containers/burger_orderer/connecto_to_database.py", line 2, in <module>
+    from mysql.connector import connect
+ModuleNotFoundError: No module named 'mysql'
+
+It seems as I didn't have the mysql module installed. I installed it with pip install and now I can see that the container with the database is up and running and a connection has been created:
+
+podman ps
+CONTAINER ID  IMAGE                           COMMAND     CREATED         STATUS             PORTS                   NAMES
+1ee69c091d2d  docker.io/library/mysql:latest  mysqld      26 seconds ago  Up 26 seconds ago  0.0.0.0:3308->3306/tcp  menuStore
+
+To run this, I have to stand in the db folder:
+python3 connecto_to_database.py
+A connection object has been created.
+
+Success! Next step is to test the data using mysql in the terminal. And if I have time then figure out how to read the data in our burger_orderer and use it instead of our current static_burgers.
+
+But first, it's time to make a debug session. I've thought about how to best debug the code since we have a lot of code in app.py. I think we should make a module containing functions used in app.py 
+and then debug it in smaller parts, using different inputs to see what happens with our variables.
+_____
+
+

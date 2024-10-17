@@ -94,7 +94,7 @@ tested db containers and got errors:
 error rewriting "C:\\Users\\mosta\\OneDrive\\Dokuments\\GitHub\\Grupptest\\Containers\\dB\\menuStore.sql" to be relative to "/": expected root directory to be an absolute path, got "/"mysql: [Warning] Using a password on the command line interface can be insecure.
 ERROR at line 1: Failed to open file '/tmp/menuStore.sql', error: 2
 
-
+automatiserade enhetstestet med python 
 
  python -m pytest test_buy2.py
 
@@ -126,3 +126,19 @@ rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_or
 collected 0 items
 
 ============================ no tests ran in 0.41s ============================
+
+ex på manuella tester
+Genom att låtsas vara en kund testa jag att beställa en burgare, ta bort och lägga till i min beställning och jag fick
+
+på burgerorder:
+127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /burgers2?burgers=Signeburger&remove_ingredient=Avocado&add_ingredient=Portabello+mushroom HTTP/1.1" 200 -
+Placing an order on Mostafaburger with additions: ['Portabello mushroom'] and removals: []
+
+på KitchenView:
+
+Loading front page
+127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /buy/Signeburger?add=Portabello%20mushroom&remove=Avocado HTTP/1.1" 200 -
+
+
+
+Ordered Signeburger with added ingredients: Portabello mushroom and without: Avocado

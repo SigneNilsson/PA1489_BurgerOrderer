@@ -10,6 +10,7 @@ def connect_to_db():
             user = 'root',
             password = '',
             host = 'localhost',
+    port = 3308,
             database = 'menu_store')
 
         print('A connection object has been created.')

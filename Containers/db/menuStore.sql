@@ -6,7 +6,6 @@ USE menu_store;
 CREATE TABLE IF NOT EXISTS menu_store.menu_item (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
-  ingredients VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

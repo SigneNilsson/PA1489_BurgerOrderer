@@ -21,7 +21,7 @@ Configuration management means systematically managing and documenting all compo
 Configuration management makes it possible to track all changes made to the system, contributes to the system's structure and status, and by continuously documenting the configuration of the system, we ensure that the system works as expected and that all components are compatible with each other.
 
 
-Brief summary about the most common workflow with git, including those
+-Brief summary about the most common workflow with git, including those
 git commands used;
 the most common workflow with git starts with cloning a repository, creating a new branch, creating files, making changes, saving the changes, sending changes, downloading and uploading them and merging with the current branch.
 
@@ -34,18 +34,18 @@ git push - sends the changes
 git merge -merge branches
 
 
-Experience working with configuration management:
+-Experience working with configuration management:
 
-What went well?
-It was easy to create the github account, repository and create files.
-
-
-What went less well?
-It was a bit difficult to clone the repository, create a pull request and merge to the branch
+-What went well?
+Mostafa= It was easy to create the github account, repository and create files.
 
 
-How did you solve the difficulties? Could you have done differently?
-We got help from each other and the exercises.
+-What went less well?
+Mostafa= It was a bit difficult to clone the repository, create a pull request and merge to the branch
 
 
-What did you not manage to solve? Why not
+-How did you solve the difficulties? Could you have done differently?
+Mostafa= We got help from each other and the exercises.
+
+
+-What did you not manage to solve? Why not
