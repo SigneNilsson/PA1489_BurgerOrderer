@@ -42,3 +42,16 @@ what you did and how you thought about it:
 • What went less well?
 • How did you solve the difficulties? Could you have done differently?
 • What did you not manage to solve? Why not?
+
+
+
+
+
+-välja språk och andra tekniker som ska användas.
+-börja få igång kitcehnview och burger orderer utan databas
+-få igång databas
+-få databas att fungera i container
+-få kitchenview och burgerorderer att fungera i container.
+
+-- Valde språk python och podman som container. Använder github för konfigurationshantering.
+--Använde mikaels git repository för att sätta upp enkel version av burger orderer och kitchenview.
