@@ -36,7 +36,6 @@ def frontpage():
     #new_url = request.args.get('url')
     #socketio.emit('url_update', {'new_url': new_url})
     print('Loading front page', flush=True)
-    
 
     return index()
 
@@ -54,17 +53,17 @@ def buy(burger_name):
     add_ingredients = request.args.getlist('add')
     remove_ingredients = request.args.getlist('remove')
     
-    if add_ingredients:
-        print('<br><br><strong>Added ingredients:</strong><br>')
-        for ingredient in add_ingredients:
-            print(' - ' + ingredient + '<br>')
-    
-    if remove_ingredients:
-        print('<br><strong>Removed ingredients:</strong><br>')
-        for ingredient in remove_ingredients:
-            print(' - ' + ingredient + '<br>')
     print(f"one {burger_name} ordered with the following options:")
-    return pg 
+    if add_ingredients:
+        print('Added ingredients:')
+        for ingredient in add_ingredients:
+            print(' - ' + ingredient)
+
+    if remove_ingredients:
+        print('Removed ingredients:')
+        for ingredient in remove_ingredients:
+            print(' - ' + ingredient)
+    return "ok"
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

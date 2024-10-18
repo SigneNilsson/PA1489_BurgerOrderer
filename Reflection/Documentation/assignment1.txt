@@ -42,10 +42,14 @@ Our experience working with configuration management:
 Our plan was to use a maintenance branch, and only merge code that was working as we wanted with main. That would make us able to make changes in the maintenance branch 
 without ruining the code that we knew worked well. The intent was to always make descriptive commit messages that descibes the content and intent of the commit. 
 We all have different starting points using git, we all have different views on what went well:
+
 Mostafa= It was easy to create the github account, repository and create files.
+
 Signe- As I did not know how to use git before this project I think it went well using the commands in the end. It was a bit confusing in the beginning and I had to check 
 the list of git commands I used in my engineers journal everytime I made a commit. I didn't know it was possible to use git through vscode, but its also I simple way to do it.
 Now, as the project is at it's finishline I feel comfortable using git and the commands. 
+
+Eidam - I had used git in past projects so I had some more experience using git in general, although my groupmates handled git with care and got better using git everytime we worked on our project. 
 
 -What went less well?
 In general the configuration management went well when we all had git set up.
