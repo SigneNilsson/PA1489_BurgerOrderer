@@ -178,6 +178,73 @@ Loading front page
 Got the following printed on the web page:
 "Ordered Signeburger with added ingredients: Portabello mushroom and without: Avocado"
 
+
+
+*As we have been given in the assignment, during the course of the project each of us must carry out a debug-session and document this in the engineering diary.
+so I chose the following function from burger_order to run a debug-session:
+
+
+def addOptions(url, args, prefix):
+    if args:
+        url += '?' if '?' not in url else '&'
+        url += '&'.join([f'{prefix}={arg}' for arg in args])
+    return url
+
+
+I used Thony app to run my debug-session as I have worked with before and its a good tool to run debugging process!
+
+tested the folloeing moment in Thony:
+---------------------------------------------------------------------------------
+import pdb
+
+def addOptions(url, args, prefix):
+    if args:
+        url += '?' if '?' not in url else '&'
+        
+        # Sets a breakpoint to inspect the URL before adding options
+        pdb.set_trace()
+        
+        url += '&'.join([f'{prefix}={arg}' for arg in args])
+        
+        #Sets a breakpoint to inspect the URL after options have been added
+        pdb.set_trace()
+        
+    return url
+
+# Exempelanvändning
+url = "http://kitchenview.com/order?burger=Mostafaburger"
+add_ingredients = ["tomato"]
+remove_ingredients = ["onion"]
+
+# Debugging addOptions function
+url_with_add = addOptions(url, add_ingredients, 'add')
+url_with_remove = addOptions(url_with_add, remove_ingredients, 'remove')
+
+print(url_with_remove)
+
+-------------------------------------------------------------------------------------
+
+
+In thony I set my breakpoints and run debugging and use the step in button and then it goes through my examples and sets values ​​in the function calls and then it goes through the if conditions and after the first breakpoint
+ so "url" contains the original URL with any existing parameters, and after the second breakpoint "url" is updated with the new options that have been added.
+
+
+
+
+
+
+My monitored variables are:
+url: The URL that is built based on the selected options.
+args: List of options to add.
+prefix: The prefix used to indicate whether the option should be added or removed.
+
+Changes during the debug-session:
+After the first breakpoint: url contains the original URL with any existing parameters.
+After the second breakpoint: the url is updated with the new options that have been added.
+
+
+
+
 //
 
 
@@ -404,3 +471,19 @@ collected 1 item
 buydef-test.py .                                                         [100%]
 
 ============================== 1 passed in 0.01s ==============================
+
+
+
+def sendToKitchen(burgerName, add_ingredients=None, remove_ingredients=None):
+    if burgerName != "0":
+        requrl = makeURL(burgerName)
+        if add_ingredients:
+            requrl = addOptions(requrl, add_ingredients, 'add')
+        if remove_ingredients:
+            requrl = addOptions(requrl, remove_ingredients, 'remove')
+
+        print('Using KitchenView URL: ' + requrl)
+        requests.get("http://localhost:5000", {'url': requrl})
+
+        return 
+    return print("Please choose a burger.")
