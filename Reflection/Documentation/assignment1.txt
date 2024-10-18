@@ -40,7 +40,8 @@ Our experience working with configuration management:
 
 -What went well?
 Our plan was to use a maintenance branch, and only merge code that was working as we wanted with main. That would make us able to make changes in the maintenance branch 
-without ruining the code that we knew worked well. We all have different starting points using git, we all have different views on what went well:
+without ruining the code that we knew worked well. The intent was to always make descriptive commit messages that descibes the content and intent of the commit. 
+We all have different starting points using git, we all have different views on what went well:
 
 Mostafa= It was easy to create the github account, repository and create files.
 
@@ -51,17 +52,26 @@ Now, as the project is at it's finishline I feel comfortable using git and the c
 Eidam - I had used git in past projects so I had some more experience using git in general, although my groupmates handled git with care and got better using git everytime we worked on our project. 
 
 -What went less well?
-In general the configuration management went well when we all had it set up.
+In general the configuration management went well when we all had git set up.
 One thing that can be difficult is when you get merge conflicts. We quickly got in the habit of pulling, committing and pushing often, and 
-communicated which files we worked in as to not get conflicts.
+communicated which files we worked in as to not get conflicts. 
 Mostafa= It was a bit difficult to clone the repository, create a pull request and merge to the branch.
 
 
 -How did you solve the difficulties? Could you have done differently?
 As mentioned above, we did only have a few conflicts, and when that merge conflict happened we went through it and took it step by step 
-as to see what to keep and what to discard.
+as to see what to keep and what to discard. Some of the earlier commit messages could have been better formed as to describe better what was commited.
+
+Another thing is the arrangement of the configuration management, and how we decided to use branches. We have discussed the meaning of having a maintenance branch 
+and that it might have been useful having one separate branch for each member of the group from main instead.
 Mostafa= We got help from each other and the exercises.
 
 -What did you not manage to solve? Why not
 We did not have any issues regarding configuration management that we could not solve. We decided on using a maintenance branch early on and stuck with it. 
-Merging only perfectly working code to main.
+Merging only perfectly working code to main. 
+
+Summary of the collaboration:
+All in all the collaboration in the group has worked as well as it could. We have had setbacks with sickness in different members 
+of the group at different parts of time which has set us back a bit when it comes to the plan. As we might have initially intended to take responsibility of different 
+parts of the project it quickly showed it was not possible. Partly because of sickness but also because we all learned som much new skills and wanted to use our new knowledge. 
+We have all been working more or less on all parts of the project which we think is an advantage for our personal development journey.
