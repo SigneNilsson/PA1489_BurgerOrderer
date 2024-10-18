@@ -2,6 +2,16 @@
 import pytest
 
 
+def addOptions(url, args, prefix):
+    if args:
+        url += '?' if '?' not in url else '&'
+        url += '&'.join([f'{prefix}={arg}' for arg in args])
+    return url
+
+
+
+
+
 def addOptions(url, args):
     """Adds query parameters to a given URL. The URL with the appended query parameters."""
     if 0 != len(args):
