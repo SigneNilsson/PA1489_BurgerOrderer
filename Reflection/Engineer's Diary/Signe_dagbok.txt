@@ -234,7 +234,21 @@ except TypeError
 
 But that wouldn't be necessary as the function is never called with arguments in our code. But would maybe be needed if getBurgers() was used again in another script.
 
+___
+Today is the day we have to submit out assignments. The aim is to do the last documentation. Ofcourse my docker has decided to not work, so I cant test the app using containers.
+I have tied to uninstall docker and install it again but I get the same error when trying to start it. It is not beacuse of our code, since mostafa can run it all using the same 
+commands I used yesterday. I get an error in the actual docker app:
+
+"An unexpected error occurred
+Docker Desktop encountered an unexpected error and needs to close."
+
+This is really frustrating as I would like to use the app in the container as I'm documenting the last bit for our assignments. Really stressful last day, but at least I know the code is 
+working as I could use it yesterday.
+
+
 Förbättringsmöjligheter:
 -hämta data från databasen
 -redirect i kitchenview när order lagts så att den syns
 -lägga till/ta bort flera ingredienser.
+
+
