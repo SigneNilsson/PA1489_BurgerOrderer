@@ -39,13 +39,12 @@ to make sense to us beginners, we started working on the parts that we did know 
 We did not get the containers up and running until late in the project, thats why we did not have time to make it all work as we wanted. We did not make it into modules which 
 we know makes our code hard to read and test. It's all down to lack of time really. In each container for the kitchen view and the burger orderer 
 we have app.py, which is the program.
-• The project in general
-• Each container
-• Each module
 
 
 
--Your experiences about how the project was implemented.
+
+-Your experiences about how the project was implemented:
+
 • What went well?
 What went well is that we all contributed as best as we could, and learned a lot along the way. We have all components for a working project,
 but did not manage to put it all together before the assignment was due. I think all the important parts are there and working.
@@ -66,7 +65,8 @@ As stated above we didn't manage to finalize the working database and make use o
 
 
 
--Your experiences of working with containers.
+-Your experiences of working with containers:
+
 • What went well?
 As we finally understood how easy it was to use docker-compose, it all worked well with building and running the containers.
 
