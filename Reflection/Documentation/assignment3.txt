@@ -51,7 +51,24 @@ that we know that automated tests exist it seems best to implement them from sta
 We do not test all of the functions. See why in previous answer.
 
 
+To do a automated test by Pytest:
+we created a test file (buydef-test.py)in burger_order and tested the function "def addOptions()".
+In the terminal under the file burger_order we runed command, python -m pytest buydef-test.py, and get the following print-out!
 
+the output:
+
+$ python -m pytest buydef-test.py
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
+collected 1 item
+
+buydef-test.py .                                                         [100%]
+
+============================== 1 passed in 0.01s ==============================
+
+
+The test successfully passed!
 
 
 försöka skriva automatiserade testet när det passar under tiden
