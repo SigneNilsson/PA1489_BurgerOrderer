@@ -145,17 +145,19 @@ Right now we can only choose burgers but we don't get orders.
 
 //
 
-I've been sitting with FrontPage and getting together a better set of functions and calls and html to make it easier for the customer to order their burger and customize their order.
+I've been sitting with FrontPage and getting together a better set of functions and calls and HTML to make it easier for the customer to order their burger and customize their order.
 
 
 
-now looking at task 3 we realize that we have run various manual tests but not an automated test. I searched for some information and found "pytest" which is quite a popular python testing framework used to run tests. It was very easy to install it using the pip install pytest command. All we need is that we have installed pytest, a test file and selected function or module to run the test.
+Now looking at assignment3 we realize that we have run various manual tests but not an automated test. I searched for some information and found "pytest" which is quite a popular python testing framework used to run tests. 
+It was very easy to install it using the "pip install pytest" command. All we need is that we have installed pytest, a test file and selected function or module to run the test.
 
 I created a test file and tested the "getBurger" function by running the command, pytest test_buy2.py. The test failed with the following error message:
 
 "bash: pytest: command not found"
 
-I tried different ways and tried to understand the error message. I got help from the teacher Andreas who has the python course and ran pytest -m test_buy2.py this time instead. Then I used the Python interpreter's module manager to run pytest, to ensure that Pytest runs within the current Python environment. I then received the following message:
+I tried different ways and tried to understand the error message. I got help from the teacher Andreas who has the python course and ran pytest -m test_buy2.py this time instead. 
+Then I used the Python interpreter's module manager to run pytest, to ensure that Pytest runs within the current Python environment. Then I received the following message:
 
 
 =================================== ERRORS ====================================
@@ -168,7 +170,7 @@ ERROR test_buy2.py - AttributeError: module 'pytest' has no attribute 'buy2'
 !!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
 ============================== 1 error in 0.53s ===============================
 
-after I changed my test function and made sure I have the right module in my code, the test went through and by mistake I accidentally closed the terminal and then lost the printout.
+After I changed my test function and made sure I have the right module in my code, the test went through and by mistake I accidentally closed the terminal and then lost the printout.
 
 
 
@@ -178,14 +180,16 @@ I noticed that we are missing the "Makefile script" so I got it from mMikael's e
 //
 
 
-In addition to our manual tests in VSC from time to time, we have tested being a customer and ordered different burgers, removed and added to the order. Also tried to test two burgers at the same time or add/remove several things at the same time which did not work because we have decided that you can only select one burger at a time and can only lighten one ingredient remove one at a time. Below are printouts from the terminal:
+In addition to our manual tests in VSC from time to time, we have tested being a customer and ordered different burgers, removed and added to the order. 
+Also tried to test two burgers at the same time or add/remove several things at the same time which did not work because we have decided that you can only select one burger at a time and can only lighten one ingredient remove one at a time. 
+Below are printouts from the terminal:
 
-in the terminal for burger orders:
+In the terminal for burger orders:
 
 127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /burgers2?burgers=Signeburger&remove_ingredient=Avocado&add_ingredient=Portabello+mushroom HTTP/1.1" 200 -
 Placing an order on Mostafaburger with additions: ['Portabello mushroom'] and removals: []
 
-in the terminal on KitchenView:
+In the terminal on KitchenView:
 Loading front page
 127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /buy/Signeburger?add=Portabello%20mushroom&remove=Avocado HTTP/1.1" 200 -
 
@@ -227,7 +231,7 @@ def addOptions(url, args, prefix):
         
     return url
 
-# Exempelanvändning
+#exempelusing
 url = "http://kitchenview.com/order?burger=Mostafaburger"
 add_ingredients = ["tomato"]
 remove_ingredients = ["onion"]
@@ -241,12 +245,8 @@ print(url_with_remove)
 -------------------------------------------------------------------------------------
 
 
-In thony I set my breakpoints and run debugging and use the step in button and then it goes through my examples and sets values ​​in the function calls and then it goes through the if conditions and after the first breakpoint
+In both Thony and VSC tried to set my breakpoints and run debugging and use the step in button and then it goes through my examples and sets values ​​in the function calls and then it goes through the IF conditions and after the first breakpoint
  so "url" contains the original URL with any existing parameters, and after the second breakpoint "url" is updated with the new options that have been added.
-
-
-
-
 
 
 My monitored variables are:
@@ -290,8 +290,9 @@ Successfully installed mysql-connector-python-9.1.0
 
 
 
-There are always challenges when it comes to a group project and collaboration with others. We have different abilities and work in different ways and try to contribute to the work as much as we can. For example, 
-we haven't been able to continue our physical meetings lately with full strength as one of us has been sick but still tried to work from home and contribute to the work. 
+There are always challenges when it comes to a group project and collaboration with others. We have different abilities and work in different ways and try to contribute to the work as much as we can. 
+For example, 
+we haven't been able to continue our physical meetings lately with the whole group as one of us has been sick but still tried to work from home and contribute to the work. 
 In the beginning, we were not as good at planning and communication as we are right now, which has become experience for all of us and developed us as a team.
 
 
@@ -299,7 +300,8 @@ Unfortunately, so far we have not been able to get a connection to the database,
 
 
 
-The command, pip install podman-compose, tries to install Podman Compose, a tool that allows you to run docke-ompose.yml files with Podman instead of Docker. Podman is a container engine that works without a daemon. With podman you can run containers without root privileges. podman compose helps manage multiple containers and their dependencies, which is especially useful for development and testing.
+The command, pip install podman-compose, tries to install Podman Compose, a tool that allows you to run docke-ompose.yml files with Podman instead of Docker. 
+Podman is a container engine that works without a daemon. With podman you can run containers without root privileges. podman compose helps manage multiple containers and their dependencies, which is especially useful for development and testing.
 installation went without any problems:
 
   "Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
@@ -472,7 +474,7 @@ menustore-1      | 2024-10-17T23:02:05.406782Z 0 [System] [MY-010116] [Server] /
 
 
 I create a test file in burgerorder and test the function "def addOptions()".
-I put myself in burger order in the terminal and run command python -m pytest buydef-test.py
+In burger_order in the terminal, run command "python -m pytest buydef-test.py"
 
 The test passed and I get the following output:
 
@@ -509,3 +511,13 @@ we have also carried out various tests, both manual but also an automated test w
 
 But unfortunately there are many areas for improvement such as; we cannot retrieve data about the burgers from the database we created but it retrieves information from the list we created.
 Or that the customer cannot order two or more burgers at the same time, or that you can remove or add ingredients one at a time and not several at the same time.
+
+
+
+It tooked a lot of us to learn and collaborate to develop a program within a configured environment and be able to start our program with the help of containers. 
+I am a beginner in programming and this project has really thrown me suddenly into a job that will hopefully experience after the study. 
+It was difficult but now I have learned a lot of new things that I hopefully will use again in the future.
+
+Greetings
+
+Seyed Mostafa Mohseni
