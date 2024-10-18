@@ -15,11 +15,18 @@ https://github.com/SigneNilsson/PA1489_BurgerOrderer.git
 
 -Brief summary of what you have implemented:
 
-In our project we have implemented various techniques such as docker, python flask and sql to get our burger ordering website up and running, we used docker to make the burger ordering website, kitchenview website and the database to all run and be able to communicate with each other. We made use of python as language in our project and python flask as our means of webdevelopment, we should python flask and python because it was the language our group had used the most so we decided to make use of that strength instead of learning a new language. We also used sql to get a database including all the data of the burgers to working order, although we didn't have enough time to implement it into our code.
+In our project we have implemented various techniques such as docker, python flask and sql to get our 
+burger ordering website up and running, we used docker to make the burger ordering website, 
+kitchenview website and the database to all run and be able to communicate with each other. 
+We made use of python as language in our project and python flask as our means of webdevelopment, 
+we chose python flask and python because it was the language our group had used the most so we decided 
+to make use of that strength instead of learning a new language. We also used sql to get a database 
+including all the data of the burgers to working order, although we didn't have enough time to implement it into our code.
 
-We have decided our product types, development environment, use Flask we have updated burger_order , kitchenview and menustore, created containers, installed necessary tools for the program.
-chosen language and other technologies to be used. started to get kitcehnview and burger orders up and running without a database
-got database up and running, got database working in container and got kitchenview and burger orders working in container.
+To run our project you stand in the root of the project and use the following command:
+
+docker-compose up
+
 
 
 what you did and how you thought about it:
