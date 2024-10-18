@@ -13,7 +13,7 @@ Link to the project page on the git server:
 
 https://github.com/SigneNilsson/PA1489_BurgerOrderer.git
 
--Testplan
+-Testplan:
 As most of the items and concepts of 5.1.1 in the assignment where new to us it was hard to make a plan for the tests. For example, as we were 
 to make the plan for testing in the beginning we did not even know what a module was. Even less we knew how to test it! We did not know what an API endpoint
 was, we did not know what technologies existed for testing. And even though Mikael had a lecture on debugging and testing, it was hard to make a plan of how to make 
@@ -73,11 +73,11 @@ More questions from assignment3:
 • How many tests you have written
 We have written 2 automated tests. You can see the commands on how to run it in the documentation above.
 
-• What they test
+• What they test:
 They test getBurgers() *test if getBurgers() returns 3 burgers.
 They test addOptions(). 
 
-• How many tests succeed or fail
+• How many tests succeed or fail:
 All tests succeed.
 
 

@@ -492,7 +492,7 @@ buydef-test.py .                                                         [100%]
 
 
 
-
+//
 
 Finally,
 we have;
@@ -513,11 +513,14 @@ But unfortunately there are many areas for improvement such as; we cannot retrie
 Or that the customer cannot order two or more burgers at the same time, or that you can remove or add ingredients one at a time and not several at the same time.
 
 
+//
+
 
 It tooked a lot of us to learn and collaborate to develop a program within a configured environment and be able to start our program with the help of containers. 
 I am a beginner in programming and this project has really thrown me suddenly into a job that will hopefully experience after the study. 
 It was difficult but now I have learned a lot of new things that I hopefully will use again in the future.
 
-Greetings
-
-Seyed Mostafa Mohseni
+/Greetings
+/Seyed Mostafa Mohseni
+ 2024-10-18
+ 
