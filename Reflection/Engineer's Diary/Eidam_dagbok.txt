@@ -87,4 +87,6 @@ Git branch
     - Using mysql.connector
     - Using python flask modules
     - Making use of the url a lot to navigate what part of the code should execute (@app.route(''))
-    - 
+    - Refreshment of using forms, GET and POST in HTML 
+
+    
