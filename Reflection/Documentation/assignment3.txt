@@ -38,15 +38,18 @@ we could stick to, even though it's vague.
 -Your experiences about writing automated unit tests.
 • What went well?
 We did manage to use pytest successfully, even though it only tests a small part of the code.
+
 • What went less well?
 As automated tests are new to us, we didn't make any tests that actually test functionality of
 a large part of the code, so it's not that useful. It was hard knowing how to use the automated tests in a 
 useful way.
+
 • How did you solve the difficulties? Could you have done differently?
 As automated tests is yet another new component in our toolbox we think we couldn't have done anything differently on this point
 given our starting point.
 We had to focus on functionality and all new concepts required to make the app work, before thinking on testing. Although now 
 that we know that automated tests exist it seems best to implement them from start.
+
 • What did you not manage to solve? Why not?
 We do not test all of the functions. See why in previous answer.
 
