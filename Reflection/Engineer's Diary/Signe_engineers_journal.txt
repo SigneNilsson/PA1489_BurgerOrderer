@@ -271,7 +271,18 @@ test_functions.py .                                                             
 ================================================== 1 passed in 0.04s ==================================================
 
 It all passed, as I knew because it does not test anything we change in the code.
+
+
 ___
+In conclusion we have a working burger-project that starts with the single command
+
+docker-compose up
+
+In the project we managed to get burgerorderer, kitchenview and the database running in containers. We have implemented
+functions for ordering burgers with the option of added or removed ingredients. The order is shown in the terminal of kitchen view 
+as well as a redirection to an ordering page in burger orderer. We have a database and code for creating data, but did not have
+the time to put the data in the database or retrieve the data in burger orderer.
+
 To summarize this experience I want to add some conclusions as to what I've learned and some improvement opportunities I find in our final code.
 
 As mentioned, we currently do not access the database from the burgerorderer but we have all the code in place for a working database and for creating the data. An improvement 
