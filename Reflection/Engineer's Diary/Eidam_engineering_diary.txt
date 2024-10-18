@@ -159,7 +159,7 @@ Git branch
 
     Looking at the results we had been given from pytest, I think that we could have put more time into making the tests show better detailed results, to test out more functions in our project and to have a clearer destination folder for our testing to make it slightly more categorized in our project.
 
-    Although the debugging was quick, simple and fast 
+    Although the debugging was quick and simple to use, it was difficult to implement and I will keep that in mind the next time we are to implement pytest and make tests for projects.
 
     Concluding this diary and this project, I wish that we had more time as stated above to make more of the improvement areas part of the primary code for a more complex project, but we didn't have enough time to research and code. Apart from what I wish we had done, I am satisfied with the project we ended up with, and I am proud of how much we have grown as programmers, as a group and as people. I don't have much more to say about our project neither about the group I had been apart with so this concludes the Engineer's diary for Eidam Holgaard.
 
