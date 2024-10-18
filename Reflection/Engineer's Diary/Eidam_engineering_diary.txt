@@ -126,5 +126,40 @@ Git branch
     I took a peek into websockets to make make the kitchenview website update and redirect to the order url after a burger had been ordered but we were running our of time so I did what I could with the websockets and kept the code inside of the project to show that we tried. As well as trying to implement websockets, I have learned how to somewhat make use of websockets and what they are for making future projects easier to navigate since now we have the experience and knowledge for projects like this one. I am looking forward to future projets and group work.
 
 
+    Debugging sessions
+    ------------------
+    In our debugging throughout most of the project we had been manually debugging parts of the code using breakpoints and print() to see what happens and what is printing at the given moment, but as we are nearing the end of our project we had added pytest to test our functions and see so that everything is working as it should and nothing is left hanging, as well as if pytest can find improvements in our code that we cannot as well as errors and whatever else pytest could find for us so that we could fix before the project is due.
+
+    Here are the results from our debugging session for the burger ordering function where we test adding different values in addOptions and testing to see if the addOptions function is working as intended:
+
+
+    $ python -m pytest buydef-test.py
+    ============================= test session starts =============================
+    platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+    rootdir: C:\xampp\htdocs\PA1489\PA1489_BurgerOrderer\Containers\burger_orderer
+    collected 1 item
+
+    buydef-test.py .                                                         [100%]
+
+    ============================== 1 passed in 0.01s ==============================
+
+    It is working as we had intended and that is to be expected.
+
+    We also worked towards testing to see if our burgers are being sent properly and to also see if our connection between burger orderer and kitchenview is made properly:
+
+    PS C:\xampp\htdocs\PA1489\PA1489_BurgerOrderer\Containers\burger_orderer> python3 -m pytest test_functions.py
+    ================================================= test session starts =================================================
+    platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+    rootdir: C:\xampp\htdocs\PA1489\PA1489_BurgerOrderer\Containers\burger_orderer
+    collected 1 item
+
+    test_functions.py .                                                                                              [100%]
+
+    ================================================== 1 passed in 0.04s
+
+    Looking at the results we had been given from pytest, I think that we could have put more time into making the tests show better detailed results, to test out more functions in our project and to have a clearer destination folder for our testing to make it slightly more categorized in our project.
+
+    Although the debugging was quick and simple to use, it was difficult to implement and I will keep that in mind the next time we are to implement pytest and make tests for projects.
+
     Concluding this diary and this project, I wish that we had more time as stated above to make more of the improvement areas part of the primary code for a more complex project, but we didn't have enough time to research and code. Apart from what I wish we had done, I am satisfied with the project we ended up with, and I am proud of how much we have grown as programmers, as a group and as people. I don't have much more to say about our project neither about the group I had been apart with so this concludes the Engineer's diary for Eidam Holgaard.
 
