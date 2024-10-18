@@ -69,3 +69,9 @@ Mostafa= We got help from each other and the exercises.
 -What did you not manage to solve? Why not
 We did not have any issues regarding configuration management that we could not solve. We decided on using a maintenance branch early on and stuck with it. 
 Merging only perfectly working code to main. 
+
+Summary of the collaboration:
+All in all the collaboration in the group has worked as well as it could. We have had setbacks with sickness in different members 
+of the group at different parts of time which has set us back a bit when it comes to the plan. As we might have initially intended to take responsibility of different 
+parts of the project it quickly showed it was not possible. Partly because of sickness but also because we all learned som much new skills and wanted to use our new knowledge. 
+We have all been working more or less on all parts of the project which we think is an advantage for our personal development journey.
