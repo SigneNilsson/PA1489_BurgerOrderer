@@ -1,0 +1,526 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+PA1489
+The Engineer's Diary
+
+Hello
+My name is Seyed Mostafa Mohseni and I am studying the course PA1489, Basic Software Development!
+
+The assignment is called Burgerorderer and I together with others in a group (Submission group 6), will develop a program to order hamburgers!
+we must have two web clients, one to order and customize their order (BurgerOrder) and one for the kitchen that can see the order (KitchenView).
+Our team consists of three developers:
+Seyed Mostafa Mohseni,
+Signe Nilsson,
+Eidam Holgaard
+
+//
+
+At the first meeting, we decided our development environment and got started with the configuration management system. we have been ordered to work with GIT so therefore we have chosen to use a Github server for our project.
+For the choice of development environment we have agreed on *VSC* as everyone is familiar with it.
+
+we are different at programming and because of we are studying a programming course about *python* right now,
+we decided to develop our program with python although we don't know how difficult or easy this will be later in assignment2.
+
+we have different backgrounds with different abilities. I am quite a beginner but one of our group has some experience,
+which we are happy about but also a challenge for us who need to learn a lot of new things in a short time to be able to cope with the work with a decent result.
+
+we have created github account and tried to familiarize with *github* environment as configuration management tool. We have created our project and named it as, “PA1489_BurgerOrderer”.
+
+we have also installed other tools such as Git, Git terminal, Github Dekstop and Podman Dekstop that make the work easier!
+After many attempts we finally managed to create a repository for the group, clone our project and link our account to the project and create some git history. 
+We created files and the directories that we need to have, such as Reflections, Containers and planning!
+
+We also tested making our first commit by creating files. Under the planning directory, we have created a txt file with the name "product types" and then listed which burgers with which ingredients we should have!
+
+
+In order not to make it complicated and too big, we agreed on 3 burgers named after our names. Then each of us have a burger that we decided what should be included in the burger that the customer can choose from!
+
+*My burger called "Mostafaburger" contains; bread, plant beef, sauce, onion, salad, tomato and cucumber.
+
+we have also created a text file in the reflections directory for documentation of the work and the engineer's diary!
+
+It should be mentioned that the group work must first be carried out in a separate branch called *maintenance* and then merge to the *main* branch when it is finished.
+And to avoid conflicts, we should not work simultaneously in the same file!
+
+Despite all this, I feel that there is a lot of ambiguity and a bit of confusion as this is all new to me and I think it will take some time until I can get a good idea of ​​the task and the purpose of the assignment. 
+I think I have to go through the task description several times!
+
+
+we have tried to familiarize ourselves with our github environment and practiced the various operations to work with Git. We have done commit, clone, fetch, push, pullrequest, merge , etc through the below git commands:
+
+
+git clone: ​​Clones an existing repository
+git status: Shows the status of the repository
+git add: Adds files to the staging area
+git commit: Saves changes to the repository with a message
+git fetch: fetches all new commits from the specified repository
+git push: Sends commits to our git server.
+git pull: Downloads and integrates changes from the server to local branches
+git branch: Shows all branches in the repository and creates a new branch.
+git checkout/switch: Switches to another branch
+git merge: Merges another branch with the current branch
+
+Challenges in this step for me are just remembering all the commands, being able to use them in the right way and in the right order when downloading new changes and uploading them.
+
+However, I use Github desktop sometimes which makes the work with commands much faster and easier to see the changes!
+
+
+
+
+
+
+
+With the help of Mikael's sample project with the basics of BurgerOrderer in python that we download from, https://codeberg.org/mickesv/BO-py.git, we put together our structure and organization of files and codes. 
+Because we use python, we use the Flask web framework, which is easy and flexible to use for building web applications.
+
+we went through the code and tried to understand the code and the functionality. we created all the necessary files in the Containers directory.
+
+
+
+
+
+*we tested creating Image and containers for burger order, kitchenview in podman.
+
+we have talked about burger order, kitchenview and databases and checked which files we need. we created files, changed code and changed the location of the files and got better at describing commit messages more clearly.
+
+//
+
+
+Now tried to test our hamburger orderer and put the burgers and their ingredients in a Dictionary in app.py under burger_orderer.
+
+By updating our functions and HTML, we produced a simple page that displayed our burgers with their ingredients. By running commands python app.py under burger_order and port; localhost:8000 and we open our web page and can see the information we send to burger_order. 
+With the same command, python app.py, but port;localhost:5000, we can see our kitchen view.
+
+We are thinking about how to set up for the customer so that they can adapt their order, add or remove from the order.
+
+Signe and I tried to understand what a REST API is. It is a way for different systems to exchange data efficiently. 
+We use the most common method GET to retrieve data. We use URL, which is a web address to access resources on the internet.
+
+
+//
+
+we are working on and trying to understand more about the connection between burger order and kitchenview. But we have a lot to work to do when it comes to the database; Menustore!
+
+we must have a database that contains information about each type of item.
+The choice of database became SQL databases which are relational databases, a system that stores and organizes data in tables with rows and columns, much like a spreadsheet. 
+They use a language called Structured Query Language (SQL) to manage data! This is flexible that can handle large amounts of data!
+
+
+
+
+Right now we get connection errors when we try to do tests of our hamburger clients, but also a lot of errors when I run debugging in VSC.
+
+Partly it is because I am trying to start the project in burger_orderer but not in Kitchen_view and partly it is because the GET method needs to be updated!
+
+I have developed and edited the front page so that you can first see our 3 burgers with its ingredients, can select a burger and remove or add ingredients. 
+But when we click "submit" to see the order, nothing happens, we are investigating the problem!
+
+
+//
+
+we all try to get an idea of ​​working with containers to be able to run the program in.
+Advantages of containers are that it isolates the applications from each other and reduces the risk of conflicts, its much easier to move the applications in the development environment.
+
+To build contaioners and Image, we have podman dekstop, created it through the app but its not possible to run them now!
+
+
+
+we go through the assignment2 description and make sure to have the Dockerfile for each container, we make sure that the corresponding package.json which is requirements.txt exists and there is relevant info in them!
+
+
+we need to make sure we have the database working and working conatiners for burger order and kitchenview.
+we have all done a little of each part and tried to work together to get the database, contaioners and the connection between buregrorder and kitchview together, however we have had a bit of bad luck with our group meetings that have been cancelled. This creates some worries and makes it difficult to know when we will be finished with projects, but we hope we can make up for it when we see each other next time.
+
+
+//
+
+we tried to work a little bit in each direction and are now meeting again to continue with the development of the project.
+
+we run the python app.py command in the terminal from time to time and test new changes we have implemented in burgerorder.
+
+Right now we can only choose burgers but we don't get orders.
+
+
+
+
+//
+
+I've been sitting with FrontPage and getting together a better set of functions and calls and HTML to make it easier for the customer to order their burger and customize their order.
+
+
+
+Now looking at assignment3 we realize that we have run various manual tests but not an automated test. I searched for some information and found "pytest" which is quite a popular python testing framework used to run tests. 
+It was very easy to install it using the "pip install pytest" command. All we need is that we have installed pytest, a test file and selected function or module to run the test.
+
+I created a test file and tested the "getBurger" function by running the command, pytest test_buy2.py. The test failed with the following error message:
+
+"bash: pytest: command not found"
+
+I tried different ways and tried to understand the error message. I got help from the teacher Andreas who has the python course and ran pytest -m test_buy2.py this time instead. 
+Then I used the Python interpreter's module manager to run pytest, to ensure that Pytest runs within the current Python environment. Then I received the following message:
+
+
+=================================== ERRORS ====================================
+________________________ ERROR collecting test_buy2.py ________________________
+test_buy2.py:8: in <module>
+    @pytest.buy2
+E   AttributeError: module 'pytest' has no attribute 'buy2'
+=========================== short test summary info ===========================
+ERROR test_buy2.py - AttributeError: module 'pytest' has no attribute 'buy2'
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.53s ===============================
+
+After I changed my test function and made sure I have the right module in my code, the test went through and by mistake I accidentally closed the terminal and then lost the printout.
+
+
+
+
+I noticed that we are missing the "Makefile script" so I got it from mMikael's example. The Makefile script is used to manage our applications as containerized using Podman, which is a container management tool like Docker!
+
+//
+
+
+In addition to our manual tests in VSC from time to time, we have tested being a customer and ordered different burgers, removed and added to the order. 
+Also tried to test two burgers at the same time or add/remove several things at the same time which did not work because we have decided that you can only select one burger at a time and can only lighten one ingredient remove one at a time. 
+Below are printouts from the terminal:
+
+In the terminal for burger orders:
+
+127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /burgers2?burgers=Signeburger&remove_ingredient=Avocado&add_ingredient=Portabello+mushroom HTTP/1.1" 200 -
+Placing an order on Mostafaburger with additions: ['Portabello mushroom'] and removals: []
+
+In the terminal on KitchenView:
+Loading front page
+127.0.0.1 - - [17/Oct/2024 10:54:08] "GET /buy/Signeburger?add=Portabello%20mushroom&remove=Avocado HTTP/1.1" 200 -
+
+
+
+Got the following printed on the web page:
+"Ordered Signeburger with added ingredients: Portabello mushroom and without: Avocado"
+
+
+
+*As we have been given in the assignment, during the course of the project each of us must carry out a debug-session and document this in the engineering diary.
+so I chose the following function from burger_order to run a debug-session:
+
+
+def addOptions(url, args, prefix):
+    if args:
+        url += '?' if '?' not in url else '&'
+        url += '&'.join([f'{prefix}={arg}' for arg in args])
+    return url
+
+
+I used Thony app to run my debug-session as I have worked with before and its a good tool to run debugging process!
+
+tested the folloeing moment in Thony:
+---------------------------------------------------------------------------------
+import pdb
+
+def addOptions(url, args, prefix):
+    if args:
+        url += '?' if '?' not in url else '&'
+        
+        # Sets a breakpoint to inspect the URL before adding options
+        pdb.set_trace()
+        
+        url += '&'.join([f'{prefix}={arg}' for arg in args])
+        
+        #Sets a breakpoint to inspect the URL after options have been added
+        pdb.set_trace()
+        
+    return url
+
+#exempelusing
+url = "http://kitchenview.com/order?burger=Mostafaburger"
+add_ingredients = ["tomato"]
+remove_ingredients = ["onion"]
+
+# Debugging addOptions function
+url_with_add = addOptions(url, add_ingredients, 'add')
+url_with_remove = addOptions(url_with_add, remove_ingredients, 'remove')
+
+print(url_with_remove)
+
+-------------------------------------------------------------------------------------
+
+
+In both Thony and VSC tried to set my breakpoints and run debugging and use the step in button and then it goes through my examples and sets values ​​in the function calls and then it goes through the IF conditions and after the first breakpoint
+ so "url" contains the original URL with any existing parameters, and after the second breakpoint "url" is updated with the new options that have been added.
+
+
+My monitored variables are:
+url: The URL that is built based on the selected options.
+args: List of options to add.
+prefix: The prefix used to indicate whether the option should be added or removed.
+
+Changes during the debug-session:
+After the first breakpoint: url contains the original URL with any existing parameters.
+After the second breakpoint: the url is updated with the new options that have been added.
+
+
+
+
+//
+
+
+
+When I was going to run the program today, I got the following error in the terminal:
+
+Traceback (most recent call last):
+  File "C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer\app.py", line 2, in <module>
+    from connecto_to_database import connect_to_db
+  File "C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer\connecto_to_database.py", line 2, in <module>
+    import mysql.connector
+ModuleNotFoundError: No module named 'mysql'
+
+I got this error because the required module was not installed in my Python environment, so I used the command, pip install mysql-connector-python, to install it!
+installation went well:
+
+Collecting mysql-connector-python
+  Downloading mysql_connector_python-9.1.0-cp311-cp311-win_amd64.whl.metadata (6.2 kB)
+Downloading mysql_connector_python-9.1.0-cp311-cp311-win_amd64.whl (16.1 MB)
+   ---------------------------------------- 16.1/16.1 MB 4.0 MB/s eta 0:00:00
+Installing collected packages: mysql-connector-python
+Successfully installed mysql-connector-python-9.1.0
+
+
+//
+
+
+
+
+There are always challenges when it comes to a group project and collaboration with others. We have different abilities and work in different ways and try to contribute to the work as much as we can. 
+For example, 
+we haven't been able to continue our physical meetings lately with the whole group as one of us has been sick but still tried to work from home and contribute to the work. 
+In the beginning, we were not as good at planning and communication as we are right now, which has become experience for all of us and developed us as a team.
+
+
+Unfortunately, so far we have not been able to get a connection to the database, but we are working on it! our containers are also under development!
+
+
+
+The command, pip install podman-compose, tries to install Podman Compose, a tool that allows you to run docke-ompose.yml files with Podman instead of Docker. 
+Podman is a container engine that works without a daemon. With podman you can run containers without root privileges. podman compose helps manage multiple containers and their dependencies, which is especially useful for development and testing.
+installation went without any problems:
+
+  "Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed podman-compose-1.2.0 python-dotenv-1.0.1 pyyaml-6.0.2"
+
+After this, I ran the command, podman compose -f burger_orderer.yaml up --build, to start and build a set of the containerized services in the burger_orderer.yaml file with Podman. But then I got this error message:
+
+validating C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\burger_orderer.yaml: services.burgerorderer Additional property kitchenview is not allowed
+Error: executing C:\Users\mosta\AppData\Local\Microsoft\WindowsApps\docker-compose.exe -f burger_orderer.yaml up --build: exit status 15
+
+
+I got help from Mikael and edited the burger_orderer.yaml file and ran the command again and got the following:
+
+[+] Running 1/5
+ ✔ Network grupptest_default            Created                                                                                                                                                       0.0s
+ - Container grupptest-menustore-1      Creating                                                                                                                                                      0.1s
+ - Container grupptest-kitchenview-1    Creating                                                                                                                                                      0.1s
+ - Container grupptest-burgerorderer-1  Creating                                                                                                                                                      0.1s
+ - Container grupptest-adminer-1        Creating                                                                                                                                                      0.1s
+Error response from daemon: container create: statfs /mnt/c/Users/mosta/OneDrive/Dokuments/GitHub/Grupptest/Containers/kitchenview: no such file or directory
+Error: executing C:\Users\mosta\AppData\Local\Microsoft\WindowsApps\docker-compose.exe -f burger_orderer.yaml up --build: exit status 1
+
+
+
+Tried running commands two more times and after my attempts I got the following:
+
+
+[+] Running 0/2
+ - Container grupptest-burgerorderer-1  Creating                                                                                                                                                      0.1s
+ - Container grupptest-kitchenview-1    Creating                                                                                                                                                      0.1s
+Error response from daemon: container create: statfs /mnt/c/Users/mosta/OneDrive/Dokuments/GitHub/Grupptest/Containers/burgerorderer: no such file or directory
+Error: executing C:\Users\mosta\AppData\Local\Microsoft\WindowsApps\docker-compose.exe -f burger_orderer.yaml up --build: exit status 1
+
+
+//
+
+
+I got a message from Signe that she finally understands the point of the docker-compose file as it turned out that it is easier to build the containers about the docker-compose file.
+she has now created docker-compose.yaml and committed it.
+
+Now I just tested to see what happens if I build the container with podman anyway. I got this now when I run command, $ podman compose -f docker-compose.yaml up:
+
+
+>>>> Executing external compose provider "C:\\Users\\mosta\\AppData\\Local\\Microsoft\\WindowsApps\\docker-compose.exe". Please see podman-compose(1) for how to disable this message. <<<<
+
+[+] Running 5/5
+ ✔ Network grupptest_burgernetwork      Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-burgerorderer-1  Created                                                                                                                                                       0.2s
+ ✔ Container grupptest-kitchenview-1    Created                                                                                                                                                       0.3s
+ ✔ Container grupptest-menustore-1      Recreated                                                                                                                                                     0.4s
+ ✔ Container grupptest-adminer-1        Running                                                                                                                                                       0.0s
+Attaching to adminer-1, burgerorderer-1, kitchenview-1, menustore-1
+menustore-1      | 2024-10-17 20:28:31+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+menustore-1      | 2024-10-17 20:28:31+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+menustore-1      | 2024-10-17 20:28:31+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+menustore-1      | 2024-10-17 20:28:31+00:00 [Note] [Entrypoint]: Initializing database files
+menustore-1      | 2024-10-17T20:28:31.707046Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+menustore-1      | 2024-10-17T20:28:31.708269Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 9.0.1) initializing of server in progress as process 75
+off the --initialize-insecure option.
+menustore-1      | 2024-10-17T20:28:39.945848Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
+menustore-1      | 2024-10-17 20:28:40+00:00 [Note] [Entrypoint]: Database files initialized
+menustore-1      | 2024-10-17 20:28:40+00:00 [Note] [Entrypoint]: Starting temporary server
+menustore-1      | 2024-10-17T20:28:40.083204Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+menustore-1      | 2024-10-17T20:28:40.292748Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.0.1) starting as process 126
+menustore-1      | 2024-10-17T20:28:40.311905Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+menustore-1      | 2024-10-17T20:28:41.176675Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+menustore-1      | 2024-10-17T20:28:41.940861Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+menustore-1      | 2024-10-17T20:28:41.940941Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+menustore-1      | 2024-10-17T20:28:41.951354Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+..................
+
+
+
+
+Run the command once more and get the following:
+
+
+
+
+
+
+$ podman compose -f docker-compose.yaml up
+>>>> Executing external compose provider "C:\\Users\\mosta\\AppData\\Local\\Microsoft\\WindowsApps\\docker-compose.exe". Please see podman-compose(1) for how to disable this message. <<<<
+
+[+] Running 4/0
+ ✔ Container grupptest-burgerorderer-1  Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-menustore-1      Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-kitchenview-1    Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-adminer-1        Created                                                                                                                                                       0.0s
+Attaching to adminer-1, burgerorderer-1, kitchenview-1, menustore-1
+menustore-1      | 2024-10-17 20:31:13+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+adminer-1        | [Thu Oct 17 20:31:13 2024] PHP 7.4.33 Development Server (http://[::]:8080) started
+menustore-1      | 2024-10-17 20:31:13+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+menustore-1      | 2024-10-17 20:31:13+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+menustore-1      | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+menustore-1      | 2024-10-17T20:31:14.031704Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+menustore-1      | 2024-10-17T20:31:14.378069Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.0.1) starting as process 1
+menustore-1      | 2024-10-17T20:31:14.390278Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+kitchenview-1    |  * Serving Flask app 'app'
+kitchenview-1    |  * Debug mode: on
+burgerorderer-1  | Traceback (most recent call last):
+burgerorderer-1  |   File "app.py", line 2, in <module>
+burgerorderer-1  |     from connecto_to_database import connect_to_db
+burgerorderer-1  |   File "/app/connecto_to_database.py", line 2, in <module>
+burgerorderer-1  |     import mysql.connector
+burgerorderer-1  | ModuleNotFoundError: No module named 'mysql'
+kitchenview-1    | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+kitchenview-1    |  * Running on all addresses (0.0.0.0)
+kitchenview-1    |  * Running on http://127.0.0.1:5000
+kitchenview-1    |  * Running on http://10.89.0.12:5000
+kitchenview-1    | Press CTRL+C to quit
+kitchenview-1    |  * Restarting with stat
+kitchenview-1    |  * Debugger is active!
+kitchenview-1    |  * Debugger PIN: 122-816-159
+menustore-1      | 2024-10-17T20:31:15.125847Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+burgerorderer-1 exited with code 1
+menustore-1      | 2024-10-17T20:31:15.699504Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+menustore-1      | 2024-10-17T20:31:15.699548Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+menustore-1      | 2024-10-17T20:31:15.709089Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+menustore-1      | 2024-10-17T20:31:15.787364Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+menustore-1      | 2024-10-17T20:31:15.787490Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '9.0.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+adminer-1        | [Thu Oct 17 20:32:58 2024] [::ffff:10.89.0.1]:42286 Accepted
+
+
+
+
+
+
+
+now I try run command "docker-compose up" and get the follow result:
+
+
+[+] Running 4/4
+ ✔ Container grupptest-adminer-1        Created                                                                                                                                                       0.0s
+ ✔ Container grupptest-kitchenview-1    Recreated                                                                                                                                                     0.3s
+ ✔ Container grupptest-burgerorderer-1  Recreated                                                                                                                                                     0.4s
+ ✔ Container grupptest-menustore-1      Created                                                                                                                                                       0.0s
+Attaching to adminer-1, burgerorderer-1, kitchenview-1, menustore-1
+menustore-1      | 2024-10-17 23:02:04+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+adminer-1        | [Thu Oct 17 23:02:04 2024] PHP 7.4.33 Development Server (http://[::]:8080) started
+kitchenview-1    |  * Serving Flask app 'app'
+kitchenview-1    |  * Debug mode: on
+menustore-1      | 2024-10-17 23:02:04+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+menustore-1      | 2024-10-17 23:02:04+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.0.1-1.el9 started.
+kitchenview-1    | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+kitchenview-1    |  * Running on all addresses (0.0.0.0)
+kitchenview-1    |  * Running on http://127.0.0.1:5000
+kitchenview-1    |  * Running on http://10.89.0.15:5000
+kitchenview-1    | Press CTRL+C to quit
+kitchenview-1    |  * Restarting with stat
+burgerorderer-1  |  * Serving Flask app 'app'
+burgerorderer-1  |  * Debug mode: on
+burgerorderer-1  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+burgerorderer-1  |  * Running on all addresses (0.0.0.0)
+burgerorderer-1  |  * Running on http://127.0.0.1:8000
+burgerorderer-1  |  * Running on http://10.89.1.4:8000
+burgerorderer-1  | Press CTRL+C to quit
+burgerorderer-1  |  * Restarting with stat
+menustore-1      | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+kitchenview-1    |  * Debugger is active!
+kitchenview-1    |  * Debugger PIN: 799-226-451
+burgerorderer-1  |  * Debugger is active!
+burgerorderer-1  |  * Debugger PIN: 111-660-796
+menustore-1      | 2024-10-17T23:02:05.131126Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+menustore-1      | 2024-10-17T23:02:05.406782Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.0.1) starting as process 1
+
+
+
+//
+
+
+I create a test file in burgerorder and test the function "def addOptions()".
+In burger_order in the terminal, run command "python -m pytest buydef-test.py"
+
+The test passed and I get the following output:
+
+
+
+$ python -m pytest buydef-test.py
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
+collected 1 item
+
+buydef-test.py .                                                         [100%]
+
+============================== 1 passed in 0.01s ==============================
+
+
+
+//
+
+Finally,
+we have;
+The catalogs we need to have,
+Our contributions and commits,
+Two branches, "main" which is the main branch and "maintenance" which we worked in and developed the program,
+our documentation, summary of our collaboration at the end of each assignment and our engineering journals,
+Main web interface, burgerorder which the customer can order buragre and change their order, kitchenview which receive theft and the database menustore.
+Documented our containers,
+
+After so much research and testing, we have our containers ready and we can start the program there.
+Previously the program was started up via command, "python app.py" by running the command in both burger_order and Kitchen_view. 
+But now that we have containers, we can use the command, "docker-compose up" and start the program.
+we have also carried out various tests, both manual but also an automated test with the help of *Pytest* and our individual debuggsession.
+
+
+But unfortunately there are many areas for improvement such as; we cannot retrieve data about the burgers from the database we created but it retrieves information from the list we created.
+Or that the customer cannot order two or more burgers at the same time, or that you can remove or add ingredients one at a time and not several at the same time.
+
+
+//
+
+
+It tooked a lot of us to learn and collaborate to develop a program within a configured environment and be able to start our program with the help of containers. 
+I am a beginner in programming and this project has really thrown me suddenly into a job that will hopefully experience after the study. 
+It was difficult but now I have learned a lot of new things that I hopefully will use again in the future.
+
+/Greetings
+/Seyed Mostafa Mohseni
+ 2024-10-18
+ 

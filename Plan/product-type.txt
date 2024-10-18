@@ -1,0 +1,12 @@
+List of product types
+
+We want the following items on the menu:
+
+name: Mostafaburger
+with ingredienser: ingredients: "Bread", "Plantbeef", "Sauce", "Onion", "Salad", "Tomato", "Cucumber"
+
+name: Signeburger
+with ingredients: "Bread", "Halloumi", "Sauce", "Onion", "Salad", "Avocado"
+
+name: Eidamburger
+with ingredients: "Bread", "Beef", "Cheddar", "Pickles", "Ranch mayo", "Portabello mushroom"
