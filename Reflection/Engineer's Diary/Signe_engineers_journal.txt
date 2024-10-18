@@ -253,7 +253,20 @@ Docker Desktop encountered an unexpected error and needs to close."
 This is really frustrating as I would like to use the app in the container as I'm documenting the last bit for our assignments. Really stressful last day, but at least I know the code is 
 working as I could use it yesterday. As for now I have to run app.py in kitchen view and burger orderer directly in the terminal, as we did earlier before we had containers.
 ___
+I realized my automated gefBurgers() test was not documented here.. I had to add it to the code again and tried it again with the following command and output:
 
+PS C:\Users\local admin\Software_Engineering_2024\PA1489_BurgerOrderer\Containers\burger_orderer> python3 -m pytest test_functions.py
+================================================= test session starts =================================================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\local admin\Software_Engineering_2024\PA1489_BurgerOrderer\Containers\burger_orderer
+collected 1 item
+
+test_functions.py .                                                                                              [100%]
+
+================================================== 1 passed in 0.04s ==================================================
+
+It all passed, as I knew because it does not test anything we change in the code.
+___
 To summarize this experience I want to add some conclusions as to what I've learned and some improvement opportunities I find in our final code.
 
 As mentioned, we currently do not access the database from the burgerorderer but we have all the code in place for a working database and for creating the data. An improvement 
