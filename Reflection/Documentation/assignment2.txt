@@ -22,7 +22,14 @@ got database up and running, got database working in container and got kitchenvi
 
 what you did and how you thought about it:
 
+The thing that went well ni our project is that we all are eager to learn. As we all have different starting points when it comes to programming (one has experience and 
+the other two has not) it was hard to make a plan in the beginning. As we did not know what would be difficult and how much time each part would take. Initially the plan was to 
+work on different parts of the project, but as we got started we soon realized we had to be more flexible in our approach. As the many concepts of the assignments were starting 
+to make sense to us beginners, we started working on the parts that we did know what to do something with at the moment, communicating our work with each other.
 
+We did not get the containers up and running until late in the project, thats why we did not have time to make it all work as we wanted. We did not make it into modules which 
+we know makes our code hard to read and test. It's all down to lack of time really. In each container for the kitchen view and the burger orderer 
+we have app.py, which is the program.
 • The project in general
 • Each container
 • Each module
@@ -31,8 +38,16 @@ what you did and how you thought about it:
 
 -Your experiences about how the project was implemented.
 • What went well?
+What went well is that we all contributed as best as we could, and learned a lot along the way. We have all components for a working project,
+but did not manage to put it all together before the assignment was due. I think all the important parts are there and working.
 • What went less well?
+What did not went as well was that we ended up with an app that does not use the database. Another issue is that we don't 
+have any data in the database. We have the code to create it, but have not had time to use it, which I think we could solve. Another issue 
+is that we did not manage to attain the data from the database when we tested it locally. We used hard coded burgers when creating the apps and 
+that is still the case in our current version. Although I think we are close if we can just use the connect mysql module to attain the data from the 
+database and change the format of it so we can use it the same way as our static burgers.
 • How did you solve the difficulties? Could you have done differently?
+
 • What did you not manage to solve? Why not?
 
 
@@ -41,10 +56,19 @@ what you did and how you thought about it:
 
 -Your experiences of working with containers.
 • What went well?
+As we finally understood how easy it was to use docker-compose, it all worked well with building and running the containers.
 • What went less well?
+A lot of time was spent creating a container for the databas using a script without docker compose, before we understood the 
+magic of the docker compose file and how to run it.
 • How did you solve the difficulties? Could you have done differently?
+We genuinely think that the difficulties we met as it came to not knowing how to create containers and using docker-compose was because 
+plan was to get the apps working before putting them in containers. As we are new there where so many different concepts to dig into that 
+it was not easy to manage it all in the time we had.
 • What did you not manage to solve? Why not?
-
+We did not manage to solve creating data in the database. We have a script for it (manuStore.sql) that we have tested and know work for creating the data we want, 
+and we  do have a container with adminer to administrate the database, so we're really close! Again, the time was short in 
+the end, and we hope ypu can see that we have all components in place, even if it's not all finished when it comes to creating the data inside
+the container and managing to retrieve it.
 
 
 
