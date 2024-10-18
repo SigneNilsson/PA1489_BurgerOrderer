@@ -61,3 +61,32 @@ Git branch
     I have also done some cleaning in the code, legacy code who was thought of as being used but after further investigation and debugging resulted in being placebo code, hence the code is slightly cleaner.
 
     I ran into issues regarding cleaning the code whereas legacy code was being used by various functions, so resolving those problems came first before cleaning the code could be finished, rewriting certain areas of the code, adding and removing lines and cleaning legacy that had no more functionality.
+
+
+18/10-24:
+
+    Today is the last day and the day for a lot of documenting to be done. We as a group have come far and I am proud of the heights our projects reached, although there are a lot of improvement areas, as our group didn't have much experience to begin with I am truly proud to have gotten such enthusiastic and driven comrades to this groupproject. Sadly, I had been sick for a long period of time so I could not be in person and work things out with the group but I did my best to contribute code wise and through my past experience in coding as well as other aspects of the project. 
+    As the deadline is getting nigh, being today, the project as mentioned above has improvement areas, such as we have a database that has data and code to use the database but we do not have enough time to implement the code into our project to fetch data from our database using queries and more in mySQL, currently we print our the burger orders in the kitchenview terminal which is a bummer since we wanted the kitchenview website to update/redirect to the order as an order had been made, I tried fidgeting with Websockets to make our wish come through but it ended up not working so I redirected my attention to aspects that needed care for the project to end up as it's best version as of today. 
+
+    The code could have been more structured and easier to read, but as the project was quite difficult in a way that we had to do research about all the tools we had been given to use, where most of them we had never heard of before, we unfortunately didn't have enough time to both research and implement our research onto code. Therefore our project has a lot of aspects and improvement areas but as well as our project has flaws, we gained strengths. Into our toolbox we have added a substantial amount of knowledge that we now posses after this difficult assignment, we have learned about: 
+    
+    Docker/Podman 
+    --------------
+    - What they are 
+    - What they are used for
+    - How you set them up
+    - What you need for them to work
+    - Port and IP routes
+
+    Python flask
+    ------------
+    Using python flask was something very new to me and I had a somewhat of a difficult time getting into the coding of it, but after some research sessions with the group, I had gained knowledge enough to start making use of python flask. 
+
+    - Webdevelopment using server and client side 
+    - Using REST API (incomplete sadly)
+    - Using mysql.connector
+    - Using python flask modules
+    - Making use of the url a lot to navigate what part of the code should execute (@app.route(''))
+    - Refreshment of using forms, GET and POST in HTML 
+
+    

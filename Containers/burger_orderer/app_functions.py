@@ -35,6 +35,6 @@ def getBurgers():
 Burgers = getBurgers()
 try:
     wrongBurgers = getBurgers("a")
-except TypeError
+except TypeError:
     print("Not allowed")
     

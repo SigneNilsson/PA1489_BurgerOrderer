@@ -1,5 +1,6 @@
-First entry in the diary!
-We are a group of three happy people.
+Signe Nilsson - engineering journal.
+
+A new entry is separated by ___
 
 In our first meeting together we've made sure all group members have a github account. That alone proved to be a challenge.
 
@@ -19,36 +20,35 @@ git merge - merge branches
 git pull - combines git fetch and git merge to update the local branch with changes
 git push - upload local repository content to remote repository.
 
-Our aim is to keep a main branch without faults, alas the maintenance branch! This is where we vill make all changes and make sure everything is working before merging it with the main branch. 
+Our aim is to keep a main branch without faults, so we use a maintenance branch for developing. This is where we will make all changes and make sure everything is working before merging it with the main branch. 
 We're also planning on not working in the same file at the same time to avoid conflicts.
 
-The difficulties I've encountered so far is using the git commands in the right way and felling comfortable in the environment we're working with. It's the first time I've used github, but I think I'm
+The difficulties I've encountered so far is using the git commands in the right way and feeling comfortable in the environment we're working with. It's the first time I've used github, but I think I'm
 getting the hang of it now. I just need to remember to git pull after git fetch! A mistake I've made, and won't make again.
 
-As we're just in the beginning of the process there are parts of the assignment that I'm not sure how to solve yet. I'm not yet comfortable with using containers and databases so that might prove a challenge.
-
+As we're just in the beginning of the process there are many parts of the assignment that I'm not sure how to solve yet. I'm not yet comfortable with using containers and databases so that might prove a challenge, as 
+it's something I've never used before.
 ___
 We have set up burger orderer with a little help from the github directory Mikael shared. We've gone through the code trying to figure out what all parts are doing.
 We installed podman to make our containers.
-Used exercise 8 to understand containers and images and read about containers and images.
+Used exercise 8 to try to understand containers and images and read about containers and images, but there is a lot of things that I don't know how to use yet. 
 ___
-Today we set up all the files and also a first attempt at the burger orderer.
-We Tested burger orderer on localhost, and it worked! We have a simple frontpage showing the available burgers.
+Today we set up all files needed according to the assignment and also made a first attempt at the burger orderer using the code mikael has shared.
+We tested burgerorderer on localhost, and it worked! We have a simple frontpage showing the available burgers.
 
 ___
 Today we managed to get the front page of both kitchen view and burger orderer to work. We are showing all available burgers and which ingredients they contain.
 We have started with a get form that allows you to click which burger you want to buy. We still have to get the REST API so the connection still isn't working. But you can 
 see in the terminal that burger_orderer tries to send to kitchen view.
-We have started working on the database.
 
 A problem at the moment is how the alterations of the burgers is supposed to work. How are we going to show the available ingredients and add och remove items? That's something we'll 
 have to think about a bit more.
 
-Another problem om mine is that the commits i made yesterday are gone since I forgot to push them. A mistake I won't make again.
+Another problem om mine is that the commits I made yesterday are gone since I forgot to push them. A mistake I won't make again.
 ___
 Database - todays aim is to create the database and the container for it.
 
-Today i've searched a lot of information on how to set up containers. I tested getting an image for a mysql database with the following command: podman pull docker.io/library/mysql:latest and it worked.
+Today I've searched a lot of information on how to set up containers. I tested getting an image for a mysql database with the following command: podman pull docker.io/library/mysql:latest and it worked.
 Overjoyed with it working I made a script of it. I also made a sql script that creates a database (menuStore) with a table(starting with just one to test it out).
 
 I made lots of tests on how to make the container based on an mysql image working. I've had lots of problems using the syntax and getting the right paths to the files. I've also had problems with the podman cp command.
@@ -61,7 +61,7 @@ at the start of the script trying to stop and remove any existing containers wit
 
 Next up is creating tables and data in the database, something I know Eidam has started already. We also need to create containers for the kitchen view and the burger orderer and connect it all. 
 
-I'm a bit stressed because we've not been able to meet all together in the group in a while due to sickness and will have lots to do this week before the assignment is due. 
+I'm a bit stressed because we've not been able to meet all together in the group in a while due to sickness and will have lots to do before the assignment is due. 
 ---
 
 A bit of explanation on yesterdays commit: To start the container you need to go to the db folder and run the script for creating the database using ./create_database.sh, then you need to enter: podman exec -it menuStore /bin/bash to the terminal to
@@ -85,7 +85,7 @@ Today when I tried running the code in the script create_database.sh I got an er
 All three tables were created but with no data, the INSERT bit had not worked. I looked through the code and realized it was a bunch of semicolons that was missing. As Python is the language I've used the most, I guess that will happen..
 I also got an error because I used the wrong datatype when creating a table. I tried to insert a string but it was set to be an integer when the table was created. With that changed, everything is working when it comes to creating the database with actual data in it.
 
-We have been researching testing today and preparing for debugging tomorrow. I've tried the debugger in vscode in the app.py in burger_orderer using breakpoints and step over and step into, but have yet to document it. I also made a first attempt 
+We have been researching testing today and preparing for debugging. I've tried the debugger in vscode in the app.py in burger_orderer using breakpoints and step over and step into, but have yet to document it. I also made a first attempt 
 at making an automated test using pytest. I made a simple test just to try it out. I tested if length of the burger variable was three(that we have three burgers on the menu) and it, of course(as we have three burgers), passed. It was mostly to try how pytest works. Hopefully we can 
 make a more useful test tomorrow.
 
@@ -124,6 +124,7 @@ CONTAINER ID  IMAGE                           COMMAND     CREATED         STATUS
 1ee69c091d2d  docker.io/library/mysql:latest  mysqld      26 seconds ago  Up 26 seconds ago  0.0.0.0:3308->3306/tcp  menuStore
 
 To run this, I have to stand in the db folder:
+
 python3 connecto_to_database.py
 A connection object has been created.
 
@@ -165,14 +166,14 @@ and now we have all containers running (docker-compose up)!
 We also have access to the database using adminer on port 8080 in localhost. Mikael said it was useful when adding data to the database. I don't know if we'll have the time for it. The debuggsession is 
 more urgent as the assignment is due tomorrow.
 
-We also have the problem that sometimes you get redirected to an errormessage when buying burgers in menustore. Time will tell what we will manage to solve in time.
+We also have the problem that sometimes you get redirected to an errormessage when buying burgers in burgerorderer. Time will tell what we will manage to solve in time.
 ___
 
 Documentation of debugsession:
 
 My aim is to debug the app.py in burgerorderer as it is not working properly. I will use the pythondebugger in vscode.
 
-I set my breakpoints at all functions to monitor the flow of the program and maybe figure out whats going wrong when buying a burger. 
+I set my breakpoints at the first line of all functions to monitor the flow of the program and maybe figure out whats going wrong when buying a burger. 
 I used continue and found out the script runs twice before it rendered the front page. When accessing the burger orderer page on port 8000 it was working as I expected. 
 
 I selected a signeburger on localhost and submitted the form. I got a ConnectionError when trying to buy the burger. It seems as we have no connection to the kitchen view application, and
@@ -180,9 +181,9 @@ I don't know how to debug it further when it's the connection thats faulty.I got
 ___
 I realized the debug didn't work as expected because I was already running the burgerapp in the container, and when I run it in the debugger it did not work as they were trying to 
 use the same port. Now I can try to debug and monitor the variables in burgerorderer app.py. As I have not made the code that sends to kitchen view, it will be useful to se the variable names so that 
-I can understand it better. We have made several versions of the burger app, and it has worked at some point, but now it's all errors when buying.
+I can understand it better. 
 
-So: I set the breakpoints at all functions, so I will be able to step into or step over as I'm curious about the flow. As I run and debug the app I can see the frontpage as the code runs "return renderFrontpage. 
+So: I set the breakpoints at first line in all functions, so I will be able to step into or step over as I want to test the flow. As I run and debug the app I can see the frontpage as the code runs "return renderFrontpage. 
 I click on the Signeburger and submit. As the form action is /burgers2 the next breakpoint is in buy2. In buy2 the buy function is called. Now we have the variables burgerName = 'Signeburger' and two empty lists add_ingredients and 
 remove_ingredients. As I step into the buy function it prints Placing an order on Signeburger with additions: [] and removals: [] in the terminal as expected. Then the function sendToKitchen is called and as we continue running the code 
 it renders the ordering page successfully and I'm now redirected to http://127.0.0.1:8000/burgers2?burgers=Signeburger in the browser and the following message is shown: 
@@ -234,21 +235,40 @@ except TypeError
 
 But that wouldn't be necessary as the function is never called with arguments in our code. But would maybe be needed if getBurgers() was used again in another script.
 
+Final summary and reflection of the debugsessions documented above:
+As I've used the debugger in the python course I were familiar with how to use it. I know how to set breakpoints and use step over, step into and step out, and how 
+to monitor the variables. In my second session I tested the function with different arguments, and in order to do that I made another file with app_functions as to be able to change the 
+arguments without messing with the working code. 
+I think debugging will be a useful tool for me because it's easy to see the flow and how the variables change. I've used it in the other course I'm taking and it's more meaningful when 
+you have an actual problem with the code to begin with.
+
 ___
-Today is the day we have to submit out assignments. The aim is to do the last documentation. Ofcourse my docker has decided to not work, so I cant test the app using containers.
-I have tied to uninstall docker and install it again but I get the same error when trying to start it. It is not beacuse of our code, since mostafa can run it all using the same 
+Today is the day we have to submit our assignments. The aim is to do the last documentation. Of course my docker has decided to not work, so I can't test the app using containers.
+I have tried to uninstall docker and install it again but I get the same error when trying to start it. It is not because of our code, since mostafa can run it all using the same 
 commands I used yesterday. I get an error in the actual docker app:
 
 "An unexpected error occurred
 Docker Desktop encountered an unexpected error and needs to close."
 
 This is really frustrating as I would like to use the app in the container as I'm documenting the last bit for our assignments. Really stressful last day, but at least I know the code is 
-working as I could use it yesterday.
+working as I could use it yesterday. As for now I have to run app.py in kitchen view and burger orderer directly in the terminal, as we did earlier before we had containers.
+___
 
+To summarize this experience I want to add some conclusions as to what I've learned and some improvement opportunities I find in our final code.
 
-Förbättringsmöjligheter:
--hämta data från databasen
--redirect i kitchenview när order lagts så att den syns
--lägga till/ta bort flera ingredienser.
+As mentioned, we currently do not access the database from the burgerorderer but we have all the code in place for a working database and for creating the data. An improvement 
+would be to use the data rather that the hard coded burgers we use now. 
+
+Another improvement would be to get kitchen view to automatically redirect to the site where the order is shown. At the moment the order is printed in the terminal in kitchenview,
+and a orderpage is rendered, but it would be nice to have a redirection to the ordering page as the order is placed. But with that comes difficulties as every new order would make 
+a new ordering page, so we would have to set up functionality for that as well.
+
+Another improvement would be to buy more than one burger at the same time and to add and remove several ingredients. It would also be nice to be able to remove a picked addition or 
+removal once it's picked in the orderingsite. Now you have to update the page to reset it. Another thing is that you can add and remove the same ingredient. Not ideal.
+
+Yet another big improvement would be to make modules of the functions used i the app. As it is now, the code is hard to read.
+
+All in all, I have learned a lot of new concepts and technologies, a lot of new syntax and in other words a lot of new tools in my toolbox. Even though we did not make all parts work together I 
+hope it will be enough. As I have no earlier experience with coding, I'm proud of how far I've come.
 
 
