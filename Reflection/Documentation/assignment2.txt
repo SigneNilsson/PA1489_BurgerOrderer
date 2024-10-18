@@ -42,16 +42,19 @@ we have app.py, which is the program.
 • What went well?
 What went well is that we all contributed as best as we could, and learned a lot along the way. We have all components for a working project,
 but did not manage to put it all together before the assignment was due. I think all the important parts are there and working.
+
 • What went less well?
-What did not went as well was that we ended up with an app that does not use the database. Another issue is that we don't 
+What didn't go as planned was that we ended up with an app that does not use the database. Another issue is that we don't 
 have any data in the database. We have the code to create it, but have not had time to use it, which I think we could solve. Another issue 
 is that we did not manage to attain the data from the database when we tested it locally. We used hard coded burgers when creating the apps and 
 that is still the case in our current version. Although I think we are close if we can just use the connect mysql module to attain the data from the 
 database and change the format of it so we can use it the same way as our static burgers.
+
 • How did you solve the difficulties? Could you have done differently?
+Sadly we didn't solve the database issue and we could have put more time into the project as well as planned our approach better, since none of us had a good understanding of how the project should have been approached we did the best of what we knew and realized quickly that we needed a more flexible approach to finalize the project with everything that was asked for. We will be ready for the next group projects with more experience and a generally better approach. 
 
 • What did you not manage to solve? Why not?
-
+As stated above we didn't manage to finalize the working database and make use of the data we were going to put in there, and then implement it into our project because we didn't have enough time and we didn't plan our approach and prioritize aspects of the project as we should have. In the beginning we didn't know what aspects of the project should have been the main priority but now after the project we have gained the knowledge and experience to know what kind of approach we should have taken.
 
 
 
@@ -59,18 +62,19 @@ database and change the format of it so we can use it the same way as our static
 -Your experiences of working with containers.
 • What went well?
 As we finally understood how easy it was to use docker-compose, it all worked well with building and running the containers.
+
 • What went less well?
-A lot of time was spent creating a container for the databas using a script without docker compose, before we understood the 
+A lot of time was spent creating a container for the database using a script without docker compose, before we understood the 
 magic of the docker compose file and how to run it.
+
 • How did you solve the difficulties? Could you have done differently?
 We genuinely think that the difficulties we met as it came to not knowing how to create containers and using docker-compose was because 
 plan was to get the apps working before putting them in containers. As we are new there where so many different concepts to dig into that 
 it was not easy to manage it all in the time we had.
+
 • What did you not manage to solve? Why not?
 We did not manage to solve creating data in the database. We have a script for it (manuStore.sql) that we have tested and know work for creating the data we want, 
 and we  do have a container with adminer to administrate the database, so we're really close! Again, the time was short in 
 the end, and we hope ypu can see that we have all components in place, even if it's not all finished when it comes to creating the data inside
 the container and managing to retrieve it.
-
-
 

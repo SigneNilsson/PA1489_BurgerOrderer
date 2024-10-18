@@ -89,4 +89,42 @@ Git branch
     - Making use of the url a lot to navigate what part of the code should execute (@app.route(''))
     - Refreshment of using forms, GET and POST in HTML 
 
-    
+    YAML
+    ----
+    The actual purpose of YAML files and what you can use them for. 
+
+    git
+    ---
+    Git was a large concept that was hard for our group to grasp in the early stages of our development, but all the more we got further into our project the better the group became in using git. Now I am certain that the entire group is comfortable in using git! Whether it be github desktop or git in terminal.
+
+    requirements files
+    ------------------
+    Requirements files are a cool concept in python programming as it can be a txt file that you run together with python and your computer downloads everything that is inside of the requirements file, we have all gotten familiar with it and can use it effectively. 
+
+    pytest
+    ------
+    Pytest was something pretty difficult to understand and we unfortunately don't have enough time to research it properly and make use of it as we want to in our project, although we have gotten it to work for some essential parts of our code to test and see so everything is working as it should. Personally I still do not understand 100% how it works and how to set it up but I am sure that I will learn very quickly of how to make use of it and capitalize on the results and errors it can potentially give in further projects.
+
+    Containers and images
+    ---------------------
+    We sadly don't have enough time to research about volumes but we manages to get a good understanding of how containers and images work. For a container to execute you need to create an image using a dockerfile that includes settings for the docker image meaning:
+    - Port
+    - What requirements it should have
+    - What type of code it will run
+    - What directory it is supposed to be handling
+    - Environment settings
+    - An entrypoint meaning what it will run and how (for example ENTRYPOINT["python3", "app.py"]) 
+
+    Making use of these images that we create using these settings and more, we can create containers. Containers are essentially packages of software that contain the necessary elements to run in any computing environment. Containers can fundamentally even be called a server, which is what we have regarded our containers as in our project. Using the image we created to create a container where our websites will run and give us feedback through the built-in terminal in the podman desktop application as well as running so that burgers can be ordered.
+
+    create_database.sh
+    ------------------
+    We have learned a few of unix shell commands to make use of the podman commands of creating and executing the database code that we have, creating a database in either adminer or phpmyadmin for quick and simple use.
+
+    Websockets
+    ----------
+    I took a peek into websockets to make make the kitchenview website update and redirect to the order url after a burger had been ordered but we were running our of time so I did what I could with the websockets and kept the code inside of the project to show that we tried. As well as trying to implement websockets, I have learned how to somewhat make use of websockets and what they are for making future projects easier to navigate since now we have the experience and knowledge for projects like this one. I am looking forward to future projets and group work.
+
+
+    Concluding this diary and this project, I wish that we had more time as stated above to make more of the improvement areas part of the primary code for a more complex project, but we didn't have enough time to research and code. Apart from what I wish we had done, I am satisfied with the project we ended up with, and I am proud of how much we have grown as programmers, as a group and as people. I don't have much more to say about our project neither about the group I had been apart with so this concludes the Engineer's diary for Eidam Holgaard.
+

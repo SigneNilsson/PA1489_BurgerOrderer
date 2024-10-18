@@ -57,6 +57,8 @@ One thing that can be difficult is when you get merge conflicts. We quickly got 
 communicated which files we worked in as to not get conflicts. 
 Mostafa= It was a bit difficult to clone the repository, create a pull request and merge to the branch.
 
+Eidam - I think the most difficult part was the distance between the groupmembers, since I had been sick for a month... Jokes aside, an aspect of the project I found was most difficult was figuring out and making use of the connection between burger_orderer/app.py and kitchen_view/app.py, where it was difficult to understand at first, but the more we worked on the project the clearer it became.
+
 
 -How did you solve the difficulties? Could you have done differently?
 As mentioned above, we did only have a few conflicts, and when that merge conflict happened we went through it and took it step by step 
@@ -66,6 +68,7 @@ Another thing is the arrangement of the configuration management, and how we dec
 and that it might have been useful having one separate branch for each member of the group from main instead.
 Mostafa= We got help from each other and the exercises.
 
+
 -What did you not manage to solve? Why not
 We did not have any issues regarding configuration management that we could not solve. We decided on using a maintenance branch early on and stuck with it. 
 Merging only perfectly working code to main. 
@@ -73,5 +76,5 @@ Merging only perfectly working code to main.
 Summary of the collaboration:
 All in all the collaboration in the group has worked as well as it could. We have had setbacks with sickness in different members 
 of the group at different parts of time which has set us back a bit when it comes to the plan. As we might have initially intended to take responsibility of different 
-parts of the project it quickly showed it was not possible. Partly because of sickness but also because we all learned som much new skills and wanted to use our new knowledge. 
+parts of the project it quickly showed it was not possible. Partly because of sickness but also because we all learned so many new skills and wanted to use our new knowledge. 
 We have all been working more or less on all parts of the project which we think is an advantage for our personal development journey.
