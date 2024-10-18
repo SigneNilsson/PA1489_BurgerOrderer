@@ -113,7 +113,7 @@ def sendToKitchen(burgerName, add_ingredients=None, remove_ingredients=None):
             requrl = addOptions(requrl, remove_ingredients, 'remove')
 
         print('Using KitchenView URL: ' + requrl)
-        requests.get("http://localhost:5000", {'url': requrl})
+        requests.get(requrl)
 
         return 
     return print("Please choose a burger.")
