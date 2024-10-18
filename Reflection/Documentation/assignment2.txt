@@ -39,9 +39,6 @@ to make sense to us beginners, we started working on the parts that we did know 
 We did not get the containers up and running until late in the project, thats why we did not have time to make it all work as we wanted. We did not make it into modules which 
 we know makes our code hard to read and test. It's all down to lack of time really. In each container for the kitchen view and the burger orderer 
 we have app.py, which is the program.
-• The project in general
-• Each container
-• Each module
 
 
 
