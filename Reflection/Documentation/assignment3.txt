@@ -21,18 +21,64 @@ it was so many things we hadn't met before. So we decided to test our code manua
 we could stick to, even though it's vague.
 
 -Brief summary of which functionality you have tested:
+We have continuously made manual test throughout to see, to mention a few examples, if the rendered page is looking as we want and the right 
+burgers and options are ordered. Everytime we make a change we check to see the outcome. 
 
+We have used automated tests using pytest to: 
 
-
+*test if getBurgers() returns 3 burgers. Also made a catch with try/except which is not used in code but documented in Signes engineers journal.
+*Test addOptions().
 
 -Brief summary of how you have completed the tests:
+As to summarize:
+Manual testing has been used with every change in code, to see if what we expect to happen actually happen and as to not continue working 
+on code thats not working as planned.
 
+We added some automated tests in the end to test parts of the functionality.
 
 -Printout from your last test session, so you can see:
-• How many tests you have written
-• What they test
-• How many tests succeed or fail
 
+
+we created a test file (buydef-test.py)in burger_order and tested the function "def addOptions()".
+In the terminal under the file burger_order we runed command, python -m pytest buydef-test.py, and get the following print-out!
+
+the output:
+
+$ python -m pytest buydef-test.py
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
+collected 1 item
+
+buydef-test.py .                                                         [100%]
+
+============================== 1 passed in 0.01s ==============================
+
+
+The test successfully passed!
+
+
+And here is an output from the getBurgers test:
+PS C:\Users\local admin\Software_Engineering_2024\PA1489_BurgerOrderer\Containers\burger_orderer> python3 -m pytest test_functions.py
+================================================= test session starts =================================================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\local admin\Software_Engineering_2024\PA1489_BurgerOrderer\Containers\burger_orderer
+collected 1 item
+
+test_functions.py .                                                                                              [100%]
+
+================================================== 1 passed in 0.04s ==================================================
+
+More questions from assignment3:
+• How many tests you have written
+We have written 2 automated tests. You can see the commands on how to run it in the documentation above.
+
+• What they test
+They test getBurgers() *test if getBurgers() returns 3 burgers.
+They test addOptions(). 
+
+• How many tests succeed or fail
+All tests succeed.
 
 
 -Your experiences about writing automated unit tests.
@@ -54,33 +100,7 @@ that we know that automated tests exist it seems best to implement them from sta
 We do not test all of the functions. See why in previous answer.
 
 
-To do a automated test by Pytest:
-we created a test file (buydef-test.py)in burger_order and tested the function "def addOptions()".
-In the terminal under the file burger_order we runed command, python -m pytest buydef-test.py, and get the following print-out!
+Summary:
+We have tested our code continuously during the process and managed to make two tests using pytest that is automatic.
+An improvement would be if we could make tests for all the main functionality of the project and include them to run automatically. 
 
-the output:
-
-$ python -m pytest buydef-test.py
-============================= test session starts =============================
-platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
-rootdir: C:\Users\mosta\OneDrive\Dokuments\GitHub\Grupptest\Containers\burger_orderer
-collected 1 item
-
-buydef-test.py .                                                         [100%]
-
-============================== 1 passed in 0.01s ==============================
-
-
-The test successfully passed!
-
-
-försöka skriva automatiserade testet när det passar under tiden
--testa så att burger orderer fungerar med sida i localhost
--testa så att kitchenview fugnerar med sida i localhost
--testa submitknappen genom klicka och se om information skickas vidare.
--testa databasuppkoppling
--testa använda information från databas i utskrifter.
-
-
-15/10 tried using pytest to make automated tests. We started by installing pytest using pip install and creating a simple test file to try it out. Unfortunately it does not seem to work at all initially. 
-Will come back with entry when it's working.
